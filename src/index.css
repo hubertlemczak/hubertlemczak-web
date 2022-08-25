@@ -1,14 +1,67 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.colour-fade {
+  background: #ee6055;
+  animation: colourFade 15s infinite alternate;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes colourFade {
+  0% {
+    background: #ee6055;
+  }
+  25% {
+    background: #60d394;
+  }
+  50% {
+    background: #83d6f6;
+  }
+  75% {
+    background: #7d88ff;
+  }
+  100% {
+    background: #fd85ff;
+  }
+}
+
+.herosvg1 {
+  transition: stroke 1.5s;
+}
+
+.herosvg1:hover {
+  transition: stroke 0s;
+  stroke: #00ffbf;
+}
+
+.herosvg2 {
+  transition: stroke 1.5s;
+}
+
+.herosvg2:hover {
+  transition: stroke 0s;
+  stroke: #ff00ae;
+}
+
+.herosvg3 {
+  transition: stroke 1.5s;
+}
+
+.herosvg3:hover {
+  transition: stroke 0s;
+  stroke: red;
+}
+
+.herosvg4 {
+  transition: stroke 1.5s;
+}
+
+.herosvg4:hover {
+  transition: stroke 0s;
+  stroke: #eaff00;
+}
+
+.max-w-1220 {
+  margin-inline: auto;
+  max-width: 1220px;
 }
