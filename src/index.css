@@ -1,28 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.colour-fade {
-  background: #ee6055;
-  animation: colourFade 15s infinite alternate;
+* {
+  font-family: 'Inter', sans-serif;
 }
 
-@keyframes colourFade {
-  0% {
-    background: #ee6055;
-  }
-  25% {
-    background: #60d394;
-  }
-  50% {
-    background: #83d6f6;
-  }
-  75% {
-    background: #7d88ff;
-  }
-  100% {
-    background: #fd85ff;
-  }
+body {
+  background-color: black;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  filter: blur();
+  background-image: url('/src/assets/stars.svg');
+  z-index: -10000;
 }
 
 .herosvg1 {
@@ -64,4 +58,48 @@
 .max-w-1220 {
   margin-inline: auto;
   max-width: 1220px;
+}
+
+.max-w-1660 {
+  max-width: 1600px;
+}
+
+.active-nav {
+  position: relative;
+  font-weight: bold;
+  background-image: url('./assets/nav-active.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.active-nav::after {
+  animation: activeNav 1s forwards;
+  content: '';
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+  height: 10px;
+  background-color: black;
+}
+
+@keyframes activeNav {
+  from {
+    width: 130px;
+  }
+  to {
+    width: 0;
+  }
+}
+
+.text-275 {
+  font-size: 17.1875rem;
+  line-height: 0.9;
+}
+
+.opactity-15 {
+  opacity: 0.15;
+}
+
+.-right-2\/5 {
+  right: -40%;
 }

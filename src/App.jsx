@@ -1,18 +1,13 @@
-import logo from './assets/logo.svg';
-import { ReactComponent as HeroSVG } from './assets/hero.svg';
+import NavBar from './components/NavBar';
+import Home from './pages/home';
+import Projects from './pages/projects';
 
 function App() {
   return (
-    <div className="bg-black px-5">
-      <div className="container mx-auto xl:max-w-screen-2xl">
-        <img src={logo} alt="" width={30} height={30} fill="black" />
-      </div>
-      <div className="mx-auto max-w-1220 container">
-        <HeroSVG />
-        <button className="colour-fade text-xl px-5 py-2 rounded-full">
-          View Projects
-        </button>
-      </div>
+    <div className="px-5">
+      <NavBar />
+      <Home />
+      <Projects />
     </div>
   );
 }
