@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
 * {
   font-family: 'Inter', sans-serif;
 }
@@ -102,4 +107,8 @@ body::after {
 
 .-right-2\/5 {
   right: -40%;
+}
+
+.navigation-gradient {
+  background: linear-gradient(black 63%, transparent);
 }
