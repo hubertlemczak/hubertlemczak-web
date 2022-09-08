@@ -61,12 +61,15 @@ body::after {
 }
 
 .max-w-1220 {
-  margin-inline: auto;
   max-width: 1220px;
 }
 
-.max-w-1660 {
+.max-w-1600 {
   max-width: 1600px;
+}
+
+.max-w-325 {
+  max-width: 325px;
 }
 
 .active-nav {

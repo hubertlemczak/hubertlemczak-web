@@ -5,11 +5,11 @@ import logo from '../../assets/logo.svg';
 const NavBar = () => {
   return (
     <header className="navigation-gradient z-50 fixed right-0 left-0 top-0 pr-2 pl-5">
-      <nav className="mx-auto max-w-1660 flex justify-between items-center h-32">
+      <nav className="mx-auto max-w-1600 flex justify-between items-center h-32">
         <Link to="home" offset={-150} duration={500} smooth={true}>
           <img className="cursor-pointer" src={logo} alt="Logo." />
         </Link>
-        <ul className="flex text-white gap-20 ">
+        <ul className="hidden lg:flex text-white gap-20 ">
           <li className="w-20 text-center py-3 cursor-pointer">
             <Link
               to="home"

@@ -4,7 +4,7 @@ import Projects from './pages/projects';
 
 function App() {
   return (
-    <div className="px-5">
+    <div className="px-2 max-w-1220 mx-auto md:px-5">
       <NavBar />
       <Home />
       <Projects />
