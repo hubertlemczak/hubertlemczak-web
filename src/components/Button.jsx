@@ -2,7 +2,13 @@ import { ReactComponent as SearchSVG } from '../assets/search.svg';
 
 const BUTTON_INVERTED = 'text-white font-bold w-48 border ';
 
-const Button = ({ buttonType, buttonContent, otherProps, children }) => {
+const Button = ({
+  buttonType,
+  buttonContent,
+  otherProps,
+  className,
+  children,
+}) => {
   return (
     <>
       <button
@@ -10,7 +16,7 @@ const Button = ({ buttonType, buttonContent, otherProps, children }) => {
           buttonType === 'inverted'
             ? BUTTON_INVERTED
             : 'bg-gradient-to-r from-orange-800 to-purple-900 '
-        }text-white font-bold w-48 rounded-full py-3`}
+        }text-white font-bold w-48 rounded-full py-3 ${className}`}
         {...otherProps}
       >
         {buttonContent === 'search' ? (
