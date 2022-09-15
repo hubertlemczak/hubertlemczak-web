@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line no-undef
 module.exports = {
   darkMode: 'class',
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
@@ -10,7 +11,8 @@ module.exports = {
         buttonLeft: '#884F1B',
         buttonRight: '#580974',
         toolBg: '#322B3F',
-        cardBg: '#111111',
+        cardBg: '#1E1E1E',
+        svgHover: '#dedcdc',
       },
       fontSize: {
         22: '1.375rem',
