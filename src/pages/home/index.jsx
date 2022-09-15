@@ -12,11 +12,11 @@ const Home = () => {
       <div className="flex flex-col items-center lg:block py-60 lg:py-64">
         <div className="max-w-325 mx-auto md:max-w-none px-2">
           <h1 className="text-textHeading text-5xl max-w-lg md:text-7xl font-bold leading-tight lg:max-w-xl">
-            Hi I'm Hubert, <br /> a Full-Stack Dev
+            I&apos;m Hubert, <br /> a Full-Stack Dev
           </h1>
           <p className="text-textPara md:text-lg max-w-md py-12">
-            I'm a Software Developer based in London. I build responsive web
-            apps with a focus on clean and organised code.
+            I&apos;m a Software Developer based in London. I build responsive
+            web apps with a focus on clean and organised code.
           </p>
           <div className="flex flex-col items-center md:block">
             <Link
