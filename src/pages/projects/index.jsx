@@ -1,4 +1,4 @@
-import example from '../../assets/example-desktop.png';
+import EXAMPLE from '../../assets/example-desktop.png';
 import Title from '../../components/Title';
 import Project from './components/Project';
 
@@ -17,7 +17,7 @@ const Projects = () => {
           image with Gyazo Pro.Search and copy any text in this image with
           Gyazo."
           tools={['React', 'PostgreSQL', 'Express']}
-          image={example}
+          image={EXAMPLE}
           path=""
         />
         <Project
@@ -27,7 +27,7 @@ const Projects = () => {
           image with Gyazo Pro.Search and copy any text in this image with
           Gyazo."
           tools={['React', 'TailwindCSS']}
-          image={example}
+          image={EXAMPLE}
           path=""
           reverse={true}
         />
@@ -38,7 +38,7 @@ const Projects = () => {
           image with Gyazo Pro.Search and copy any text in this image with
           Gyazo."
           tools={['React', 'TailwindCSS']}
-          image={example}
+          image={EXAMPLE}
           path=""
         />
         <Project
@@ -48,7 +48,7 @@ const Projects = () => {
           image with Gyazo Pro.Search and copy any text in this image with
           Gyazo."
           tools={['React', 'PostgreSQL', 'Express']}
-          image={example}
+          image={EXAMPLE}
           path=""
           reverse={true}
         />
