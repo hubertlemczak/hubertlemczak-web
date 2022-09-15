@@ -1,0 +1,15 @@
+@keyframes popup {
+  from {
+    opacity: 0;
+  }
+  50%,
+  75% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.animate-popup {
+  animation: popup 2s;
+}
