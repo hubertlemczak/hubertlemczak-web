@@ -116,5 +116,5 @@ body::after {
 }
 
 .navigation-gradient {
-  background: linear-gradient(black 63%, transparent);
+  background: linear-gradient(rgba(0, 0, 0, 0.607) 63%, transparent);
 }
