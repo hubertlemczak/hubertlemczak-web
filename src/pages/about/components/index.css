@@ -1,0 +1,60 @@
+:root {
+  --number-of-skills: 11;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-333px * var(--number-of-skills)));
+  }
+}
+
+.carousel {
+  display: grid;
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 180px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  left: -20px;
+  width: 100vw;
+}
+
+.carousel::before,
+.carousel::after {
+  background: linear-gradient(to right, #ffffff 0%, #ffffff00 100%);
+  content: '';
+  position: absolute;
+  width: 80px;
+  z-index: 2;
+}
+
+.carousel::after {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: rotateY(180deg);
+}
+
+.carousel::before {
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.carousel-track {
+  animation: scroll 12s linear infinite;
+  display: flex;
+  align-items: center;
+  width: calc(340px * calc(var(--number-of-skills) * 2));
+}
+
+.carousel-item {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  margin-right: 130px;
+}
