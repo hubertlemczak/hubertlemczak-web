@@ -7,13 +7,13 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-333px * var(--number-of-skills)));
+    transform: translateX(calc(-525.5px * var(--number-of-skills)));
   }
 }
 
 .carousel {
   display: grid;
-  background: white;
+  background: rgb(255, 255, 255);
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
   height: 180px;
   margin: auto;
@@ -46,10 +46,10 @@
 }
 
 .carousel-track {
-  animation: scroll 12s linear infinite;
+  animation: scroll 15s linear infinite;
   display: flex;
   align-items: center;
-  width: calc(340px * calc(var(--number-of-skills) * 2));
+  width: calc(526px * calc(var(--number-of-skills) * 2));
 }
 
 .carousel-item {
