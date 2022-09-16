@@ -2,29 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color-scheme: dark;
+* {
+  color-scheme: light;
+  font-family: 'Inter', sans-serif;
 }
 
-* {
-  font-family: 'Inter', sans-serif;
+.dark {
+  color-scheme: dark;
 }
 
 html {
   overflow-x: hidden;
 }
 
-body {
-  background-color: black;
-  overflow-x: hidden;
-}
-
-body::after {
+.dark .star-bg::after {
   content: '';
   position: fixed;
   inset: 0;
   background-image: url('/src/assets/stars.svg');
-  z-index: -10000;
+  z-index: 0;
 }
 
 .herosvg1 {
@@ -78,9 +74,27 @@ body::after {
 .active-nav {
   position: relative;
   font-weight: bold;
+  background-image: url('./assets/nav-active-light.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.dark .active-nav {
+  position: relative;
+  font-weight: bold;
   background-image: url('./assets/nav-active.svg');
   background-repeat: no-repeat;
   background-position: bottom;
+}
+
+.dark .active-nav::after {
+  animation: activeNav 1s forwards ease-in-out;
+  content: '';
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+  height: 10px;
+  background-color: black;
 }
 
 .active-nav::after {
@@ -90,7 +104,7 @@ body::after {
   right: 0px;
   bottom: 0;
   height: 10px;
-  background-color: black;
+  background-color: rgb(235, 235, 235);
 }
 
 @keyframes activeNav {
@@ -115,6 +129,24 @@ body::after {
   right: -40%;
 }
 
+.dark .navigation-gradient {
+  background: none;
+  animation: darkNav 1s forwards;
+}
+
 .navigation-gradient {
-  background: linear-gradient(rgba(0, 0, 0, 0.607) 63%, transparent);
+  background: none;
+  animation: lightNav 1s forwards;
+}
+
+@keyframes darkNav {
+  to {
+    background: linear-gradient(rgba(0, 0, 0, 0.607) 63%, transparent);
+  }
+}
+
+@keyframes lightNav {
+  to {
+    background: linear-gradient(rgba(235, 235, 235, 0.607) 63%, transparent);
+  }
 }

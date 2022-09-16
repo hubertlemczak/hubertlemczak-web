@@ -6,12 +6,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        bgLight: '#f0f0f0',
+        bgDark: '#121212',
         textHeading: '#DADADA',
         textPara: '#ABAAAA',
         buttonLeft: '#884F1B',
         buttonRight: '#580974',
         toolBg: '#322B3F',
-        cardBg: '#1E1E1E',
+        darkBG: '#1E1E1E',
+        darkBGHover: '#3e3e3e',
         svgHover: '#dedcdc',
       },
       fontSize: {

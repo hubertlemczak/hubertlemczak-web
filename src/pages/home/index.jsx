@@ -1,5 +1,5 @@
 import { ReactComponent as HeroSVG } from '../../assets/hero.svg';
-import arrowSVG from '../../assets/arrow.svg';
+import { ReactComponent as ArrowSVG } from '../../assets/arrow.svg';
 import Button from '../../components/Button';
 import { Link } from 'react-scroll';
 
@@ -11,10 +11,10 @@ const Home = () => {
     >
       <div className="flex flex-col items-center lg:block py-60 lg:py-64">
         <div className="max-w-325 mx-auto md:max-w-none px-2">
-          <h1 className="text-textHeading text-5xl max-w-lg md:text-7xl font-bold leading-tight lg:max-w-xl">
+          <h1 className="dark:text-textHeading text-5xl max-w-lg md:text-7xl font-bold leading-tight lg:max-w-xl">
             I&apos;m Hubert, <br /> a Full-Stack Dev
           </h1>
-          <p className="text-textPara md:text-lg max-w-md py-12">
+          <p className="dark:text-textPara md:text-lg max-w-md py-12">
             I&apos;m a Software Developer based in London. I build responsive
             web apps with a focus on clean and organised code.
           </p>
@@ -30,7 +30,7 @@ const Home = () => {
             >
               <Button buttonContent="search">View Projects</Button>
             </Link>
-            <img className="mt-10" src={arrowSVG} alt="" />
+            <ArrowSVG className="fill-black dark:fill-white mt-10" />
           </div>
         </div>
       </div>

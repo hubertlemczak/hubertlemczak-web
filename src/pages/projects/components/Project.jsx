@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import uniqid from 'uniqid';
 
 import Button from '../../../components/Button';
@@ -5,7 +6,7 @@ import Button from '../../../components/Button';
 const Project = ({ reverse, title, tools, description, image, path }) => {
   return (
     <div
-      className={`relative flex flex-col p-2 max-w-sm bg-cardBg rounded-2xl mb-24 lg:grid lg:grid-flow-col lg:grid-cols-2 lg:bg-inherit lg:max-w-full lg:h-620 ${
+      className={`relative flex flex-col p-2 max-w-sm bg-white dark:bg-darkBG rounded-2xl mb-24 lg:grid lg:grid-flow-col lg:grid-cols-2 dark:lg:bg-inherit lg:max-w-full lg:h-620 ${
         reverse && 'lg:justify-items-end'
       }`}
     >
@@ -19,24 +20,24 @@ const Project = ({ reverse, title, tools, description, image, path }) => {
       {!reverse && <p></p>}
       <div className="lg:max-w-xl">
         <h3
-          className={`font-bold text-4xl text-textHeading dark:text-yellow-600 mt-7 mb-2 lg:text-5xl lg:mt-0 lg:mb-4 ${
+          className={`font-bold text-4xl dark:text-textHeading mt-7 mb-2 lg:text-5xl lg:mt-0 lg:mb-4 ${
             reverse && 'lg:text-right'
           }`}
         >
           {title}
         </h3>
         <ul className={`flex gap-3 mb-7 max-w-fit ${reverse && 'lg:ml-auto'}`}>
-          {tools.map((tool) => (
+          {tools.map(tool => (
             <li
               key={uniqid()}
-              className="rounded-full text-xs bg-toolBg px-3 py-1"
+              className="rounded-full text-xs text-white bg-toolBg px-3 py-1"
             >
               {tool}
             </li>
           ))}
         </ul>
         <p
-          className={`text-textPara leading-8 lg:text-22 lg:leading-10 ${
+          className={`dark:text-textPara leading-8 lg:text-22 lg:leading-10 ${
             reverse && 'lg:text-right'
           }`}
         >
@@ -47,9 +48,11 @@ const Project = ({ reverse, title, tools, description, image, path }) => {
             reverse ? 'lg:justify-end' : 'lg:justify-start'
           }`}
         >
-          <Button buttonContent="search" buttonType="inverted">
-            View Project
-          </Button>
+          <Link to={path}>
+            <Button buttonContent="search" buttonType="inverted">
+              View Project
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

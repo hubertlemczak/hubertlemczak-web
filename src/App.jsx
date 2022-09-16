@@ -6,13 +6,16 @@ import Projects from './pages/projects';
 
 function App() {
   return (
-    <div className="md:px-5">
-      <NavBar />
-      <Home />
-      <Projects />
-      <About />
-      <Contact />
-    </div>
+    <>
+      <div className="star-bg"></div>
+      <div className="transition-all duration-500 overflow-hidden bg-bgLight md:px-5 dark:bg-bgDark">
+        <NavBar />
+        <Home />
+        <Projects />
+        <About />
+        <Contact />
+      </div>
+    </>
   );
 }
 

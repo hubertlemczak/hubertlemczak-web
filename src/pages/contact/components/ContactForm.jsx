@@ -51,9 +51,9 @@ const ContactForm = () => {
         onChange={handleChange}
         required
       />
-      <button className="flex items-center justify-between rounded-md p-3 w-2/5 bg-cardBg my-4 px-4 ">
-        <span className="text-xl text-textPara">Send</span>
-        <SendSVG className="w-5 lg:w-6" />
+      <button className="flex items-center justify-between rounded-md p-3 w-2/5 bg-white dark:bg-darkBG my-4 px-4 transition-all duration-300 hover:bg-textHeading dark:hover:bg-darkBGHover">
+        <span className="text-xl dark:text-textPara">Send</span>
+        <SendSVG className="w-5 lg:w-6 stroke-black dark:stroke-textPara" />
       </button>
     </form>
   );
