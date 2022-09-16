@@ -4,7 +4,7 @@ import Socials from './components/Socials';
 const Contact = () => {
   return (
     <section
-      className="flex flex-col mx-auto px-4 relative py-24 xs:items-center md:px-0 lg:block max-w-1220"
+      className="flex flex-col mx-auto px-4 relative py-20 pb-32 xs:items-center md:px-0 lg:block max-w-1220"
       id="contact"
     >
       <div>
