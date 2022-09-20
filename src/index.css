@@ -21,6 +21,7 @@ html {
   inset: 0;
   background-image: url('/src/assets/stars.svg');
   z-index: 0;
+  opacity: 0.5;
 }
 
 .herosvg1 {
@@ -94,7 +95,7 @@ html {
   right: 0px;
   bottom: 0;
   height: 10px;
-  background-color: black;
+  background-color: #121212;
 }
 
 .active-nav::after {
@@ -104,7 +105,7 @@ html {
   right: 0px;
   bottom: 0;
   height: 10px;
-  background-color: rgb(235, 235, 235);
+  background-color: #f2f2f2;
 }
 
 @keyframes activeNav {
@@ -141,12 +142,12 @@ html {
 
 @keyframes darkNav {
   to {
-    background: linear-gradient(rgba(0, 0, 0, 0.607) 63%, transparent);
+    background: linear-gradient(rgba(18, 18, 18, 0.6) 63%, transparent);
   }
 }
 
 @keyframes lightNav {
   to {
-    background: linear-gradient(rgba(235, 235, 235, 0.607) 63%, transparent);
+    background: linear-gradient(rgba(242, 242, 242, 0.6) 63%, transparent);
   }
 }

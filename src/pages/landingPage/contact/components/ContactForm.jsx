@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import FormInput from '../../../components/FormInput';
-import FormTextArea from '../../../components/FormTextArea';
-import { ReactComponent as SendSVG } from '../../../assets/send.svg';
+import FormInput from '../../../../components/FormInput';
+import FormTextArea from '../../../../components/FormTextArea';
+import { ReactComponent as SendSVG } from '../../../../assets/send.svg';
 
 const INITIAL_CONTACT_FORM = { name: '', email: '', message: '' };
 

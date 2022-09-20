@@ -7,7 +7,8 @@ const FormInput = ({ label, ...otherProps }) => {
       />
       {label && (
         <label
-          className={`select-none text-2xl absolute left-3 top-8 transition-all duration-300 dark:text-textPara peer-focus:-top-3 peer-focus:text-base ${
+          htmlFor={otherProps.id}
+          className={`select-none cursor-text text-2xl absolute left-4 top-8 transition-all duration-300 dark:text-textPara peer-focus:-top-3 peer-focus:text-base ${
             otherProps?.value?.length && '-top-3 text-base'
           }`}
         >

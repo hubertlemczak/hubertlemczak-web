@@ -8,7 +8,7 @@ const Contact = () => {
       id="contact"
     >
       <div>
-        <h3 className="font-bold text-4xl text-textHeading dark:text-yellow-600 my-7 lg:text-5xl lg:mt-0 lg:mb-11">
+        <h3 className="font-bold text-4xl dark:text-textHeading my-7 lg:text-5xl lg:mt-0 lg:mb-11">
           Get in touch
         </h3>
         <div className="grid gap-20 max-w-1220 mx-auto lg:grid-cols-2 lg:gap-0 lg:mt-10">

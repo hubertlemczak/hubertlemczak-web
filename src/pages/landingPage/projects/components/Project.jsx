@@ -1,12 +1,13 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import uniqid from 'uniqid';
 
-import Button from '../../../components/Button';
+import Button from '../../../../components/Button';
 
 const Project = ({ reverse, title, tools, description, image, path }) => {
+  const navigate = useNavigate();
   return (
     <div
-      className={`relative flex flex-col p-2 max-w-sm bg-white dark:bg-darkBG rounded-2xl mb-24 lg:grid lg:grid-flow-col lg:grid-cols-2 dark:lg:bg-inherit lg:max-w-full lg:h-620 ${
+      className={`relative flex flex-col p-5 max-w-sm bg-white dark:bg-darkBG rounded-2xl mb-24 lg:p-0 lg:grid lg:grid-flow-col lg:grid-cols-2 lg:bg-inherit dark:lg:bg-inherit lg:max-w-full lg:h-620 ${
         reverse && 'lg:justify-items-end'
       }`}
     >
@@ -48,11 +49,16 @@ const Project = ({ reverse, title, tools, description, image, path }) => {
             reverse ? 'lg:justify-end' : 'lg:justify-start'
           }`}
         >
-          <Link to={path}>
-            <Button buttonContent="search" buttonType="inverted">
-              View Project
-            </Button>
-          </Link>
+          <Button
+            buttonContent="search"
+            buttonType="inverted"
+            onClick={() => {
+              navigate(`projects/${path}`);
+              location.reload();
+            }}
+          >
+            View Project
+          </Button>
         </div>
       </div>
     </div>

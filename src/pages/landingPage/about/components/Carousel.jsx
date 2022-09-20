@@ -1,20 +1,21 @@
+import REACT from '../../../../assets/images/react.png';
+import EXPRESS from '../../../../assets/images/expressjs.png';
+import HTML from '../../../../assets/images/html.png';
+import JS from '../../../../assets/images/js.png';
+import TS from '../../../../assets/images/ts.png';
+import NODEJS from '../../../../assets/images/nodejs.png';
+import POSTGRES from '../../../../assets/images/postgres.png';
+import PRISMA from '../../../../assets/images/prisma.png';
+import STYLED from '../../../../assets/images/styled.png';
+import TAILWIND from '../../../../assets/images/tailwindcss.png';
+import CSS from '../../../../assets/images/css.png';
+import FIGMA from '../../../../assets/images/figma.png';
+import GIT from '../../../../assets/images/git.png';
+import GITHUB from '../../../../assets/images/github.png';
+import JASMINE from '../../../../assets/images/jasmine.png';
+import JEST from '../../../../assets/images/jest.png';
+
 import './index.css';
-import REACT from '../../../assets/images/react.png';
-import EXPRESS from '../../../assets/images/expressjs.png';
-import HTML from '../../../assets/images/html.png';
-import JS from '../../../assets/images/js.png';
-import TS from '../../../assets/images/ts.png';
-import NODEJS from '../../../assets/images/nodejs.png';
-import POSTGRES from '../../../assets/images/postgres.png';
-import PRISMA from '../../../assets/images/prisma.png';
-import STYLED from '../../../assets/images/styled.png';
-import TAILWIND from '../../../assets/images/tailwindcss.png';
-import CSS from '../../../assets/images/css.png';
-import FIGMA from '../../../assets/images/figma.png';
-import GIT from '../../../assets/images/git.png';
-import GITHUB from '../../../assets/images/github.png';
-import JASMINE from '../../../assets/images/jasmine.png';
-import JEST from '../../../assets/images/jest.png';
 
 const Carousel = () => {
   return (

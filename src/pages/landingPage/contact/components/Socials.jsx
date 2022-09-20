@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-import { ReactComponent as TwitterSVG } from '../../../assets/twitter.svg';
-import { ReactComponent as EmailSVG } from '../../../assets/email.svg';
-import { ReactComponent as LinkedInSVG } from '../../../assets/linked-in.svg';
-import { ReactComponent as GitHubSVG } from '../../../assets/github.svg';
+import { ReactComponent as TwitterSVG } from '../../../../assets/twitter.svg';
+import { ReactComponent as EmailSVG } from '../../../../assets/email.svg';
+import { ReactComponent as LinkedInSVG } from '../../../../assets/linked-in.svg';
+import { ReactComponent as GitHubSVG } from '../../../../assets/github.svg';
 import './index.css';
 
 const Socials = () => {
@@ -21,7 +21,7 @@ const Socials = () => {
   return (
     <>
       {copiedToClipboard && (
-        <p className="fixed rounded-sm bottom-5 right-1/2 w-max translate-x-1/2 bg-white p-3 text-black md:text-xl animate-popup">
+        <p className="fixed rounded-md bottom-5 right-1/2 w-max translate-x-1/2 bg-black text-white dark:bg-white p-3 dark:text-black md:text-xl animate-popup">
           Copied to Clipboard
         </p>
       )}
@@ -35,8 +35,8 @@ const Socials = () => {
           aria-label="Email"
           aria-haspopup
         >
-          <EmailSVG className="fill-white h-9 hover:fill-svgHover transition-all" />
-          <span className="hidden lg:block text-textPara">
+          <EmailSVG className="fill-black hover:fill-darkBGHover dark:fill-white h-9 dark:hover:fill-svgHover transition-all" />
+          <span className="hidden lg:block dark:text-textPara">
             hubertlemczak@gmail.com
           </span>
         </div>
@@ -48,8 +48,8 @@ const Socials = () => {
           title="GitHub"
           aria-label="GitHub"
         >
-          <GitHubSVG className="fill-white h-10 hover:fill-svgHover transition-all" />
-          <span className="hidden lg:block text-textPara">
+          <GitHubSVG className="fill-black hover:fill-darkBGHover dark:fill-white h-10 dark:hover:fill-svgHover transition-all" />
+          <span className="hidden lg:block dark:text-textPara">
             github.com/hubertlemczak
           </span>
         </a>
@@ -61,8 +61,8 @@ const Socials = () => {
           title="LinkedIn"
           aria-label="LinkedIn"
         >
-          <LinkedInSVG className="fill-white h-10 hover:fill-svgHover transition-all" />
-          <span className="hidden lg:block text-textPara">
+          <LinkedInSVG className="fill-black hover:fill-darkBGHover dark:fill-white h-10 dark:hover:fill-svgHover transition-all" />
+          <span className="hidden lg:block dark:text-textPara">
             linkedin.com/in/hubertlemczak
           </span>
         </a>
@@ -74,8 +74,8 @@ const Socials = () => {
           title="Twitter"
           aria-label="Twitter"
         >
-          <TwitterSVG className="fill-white h-10 hover:fill-svgHover transition-all" />
-          <span className="hidden lg:block text-textPara">
+          <TwitterSVG className="fill-black hover:fill-darkBGHover dark:fill-white h-10 dark:hover:fill-svgHover transition-all" />
+          <span className="hidden lg:block dark:text-textPara">
             twitter.com/hubertlemczak
           </span>
         </a>

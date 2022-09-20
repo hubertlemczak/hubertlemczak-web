@@ -1,4 +1,4 @@
-import Title from '../../components/Title';
+import Title from '../../../components/Title';
 import Carousel from './components/Carousel';
 
 const About = () => {
@@ -10,33 +10,34 @@ const About = () => {
       <Title title="about me" />
       <div className="grid gap-10 max-w-1220 mx-auto pb-36 lg:gap-20 lg:grid-cols-2 lg:mt-28 xl:gap-32">
         <div className="max-w-sm lg:max-w-none">
-          <h3 className="font-bold text-4xl text-textHeading dark:text-yellow-600 my-7 lg:text-5xl lg:mt-0 lg:mb-11">
+          <h3 className="font-bold text-4xl dark:text-textHeading my-7 lg:text-5xl lg:mt-0 lg:mb-11">
             My Programming Journey
           </h3>
-          <p className="text-textPara text-justify leading-8 lg:text-22 lg:leading-10">
-            Search and copy any text in this image with Gyazo Pro.Search and
-            copy any text in this image with Gyazo Pro.Search and copy any text
-            in this image with Gyazo Pro.Search and copy any text in this image
-            with Gyazo Pro.Search and copy any text in this image with Gyazo
+          <p className="dark:text-textPara text-justify leading-8 lg:text-22 lg:leading-10">
+            Hi I&apos;m Hubert, a full-stack dev. I&apos;m a Software Developer
+            based in London. Search and copy any text in this image with Gyazo
             Pro.Search and copy any text in this image with Gyazo Pro.Search and
             copy any text in this image with Gyazo Pro.Search and copy any text
             in this image with Gyazo Pro.Search and copy any text in this image
             with Gyazo Pro.Search and copy any text in this image with Gyazo
             Pro.Search and copy any text in this image with Gyazo Pro.Search and
-            copy any text in this image with Gyazo Pro.
+            copy any text in this image with Gyazo Pro.Search and copy any text
+            in this image with Gyazo Pro.Search and copy any text in this image
+            with Gyazo Pro.Search and copy any text in this image with Gyazo
+            Pro.Search and copy any text in this image with Gyazo Pro.
           </p>
         </div>
         <div className="max-w-sm lg:max-w-none lg:mt-36">
-          <p className="text-textPara text-justify leading-8 lg:text-22 lg:leading-10">
+          <p className="dark:text-textPara text-justify leading-8 lg:text-22 lg:leading-10">
             Search and copy any text in this image with Gyazo Pro.Search and
             copy any text in this image with Gyazo Pro.Search and copy any text
             in this image with Gyazo Pro.Search and copy any text in this image
             with Gyazo Pro.
           </p>
-          <h4 className="font-bold text-sm text-textHeading dark:text-yellow-600 mt-7 mb-2">
+          <h4 className="font-bold text-sm dark:text-textHeading mt-7 mb-2">
             My Skills
           </h4>
-          <p className="text-xs text-textPara text-justify">
+          <p className="text-xs dark:text-textPara text-justify">
             REACT, HTML, CSS, JAVASCRIPT, TYPESCRIPT, GIT, NODEJS, PRISMA,
             EXPRESS, GITHUB, POSTGRESQL, TAILWINDCSS, STYLED COMPONENTS, FIGMA,
             JASMINE, JEST

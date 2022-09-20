@@ -1,5 +1,5 @@
-import EXAMPLE from '../../assets/example-desktop.png';
-import Title from '../../components/Title';
+import EXAMPLE from '../../../assets/example-desktop.png';
+import Title from '../../../components/Title';
 import Project from './components/Project';
 
 const Projects = () => {
@@ -18,28 +18,7 @@ const Projects = () => {
           Gyazo."
           tools={['React', 'PostgreSQL', 'Express']}
           image={EXAMPLE}
-          path=""
-        />
-        <Project
-          title="Manage"
-          description="Search and copy any text in this image with Gyazo Pro.Search and copy
-          any text in this image with Gyazo Pro.Search and copy any text in this
-          image with Gyazo Pro.Search and copy any text in this image with
-          Gyazo."
-          tools={['React', 'TailwindCSS']}
-          image={EXAMPLE}
-          path=""
-          reverse={true}
-        />
-        <Project
-          title="Portfolio"
-          description="Search and copy any text in this image with Gyazo Pro.Search and copy
-          any text in this image with Gyazo Pro.Search and copy any text in this
-          image with Gyazo Pro.Search and copy any text in this image with
-          Gyazo."
-          tools={['React', 'TailwindCSS']}
-          image={EXAMPLE}
-          path=""
+          path="classable"
         />
         <Project
           title="Chat App"
@@ -47,9 +26,30 @@ const Projects = () => {
           any text in this image with Gyazo Pro.Search and copy any text in this
           image with Gyazo Pro.Search and copy any text in this image with
           Gyazo."
+          tools={['React', 'TailwindCSS']}
+          image={EXAMPLE}
+          path="chat-app"
+          reverse={true}
+        />
+        <Project
+          title="Manage"
+          description="Search and copy any text in this image with Gyazo Pro.Search and copy
+            any text in this image with Gyazo Pro.Search and copy any text in this
+            image with Gyazo Pro.Search and copy any text in this image with
+            Gyazo."
           tools={['React', 'PostgreSQL', 'Express']}
           image={EXAMPLE}
-          path=""
+          path="manage"
+        />
+        <Project
+          title="Cathort 6"
+          description="Search and copy any text in this image with Gyazo Pro.Search and copy
+          any text in this image with Gyazo Pro.Search and copy any text in this
+          image with Gyazo Pro.Search and copy any text in this image with
+          Gyazo."
+          tools={['React', 'Styled-Components']}
+          image={EXAMPLE}
+          path="cathort-6"
           reverse={true}
         />
       </div>
