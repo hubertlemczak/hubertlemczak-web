@@ -7,22 +7,40 @@ const INITIAL_CONTACT_FORM = { name: '', email: '', message: '' };
 
 const ContactForm = () => {
   const [form, setForm] = useState(INITIAL_CONTACT_FORM);
+  const [messageSent, setMessageSent] = useState(false);
+  const [error, setError] = useState(false);
+
   const handleChange = e => {
     const { name, value } = e.target;
     setForm(curr => ({ ...curr, [name]: value }));
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    window.Email.send({
-      SecureToken: '204ae110-b17b-4ce5-b3c4-0fd530d01c76',
-      To: 'hubertlemczak@gmail.com',
-      From: 'hubertlemczak@gmail.com',
-      Subject: 'PORTFOLIO CONTACT FORM',
-      Body: `Name: ${form.name}\nEmail: ${form.email}\n${form.message}`,
-    }).then(message => alert(message));
-    // send me email with form data
-    setForm(INITIAL_CONTACT_FORM);
+    try {
+      const res = await window.Email.send({
+        SecureToken: '204ae110-b17b-4ce5-b3c4-0fd530d01c76',
+        To: 'hubertlemczak@gmail.com',
+        From: 'hubertlemczak@gmail.com',
+        Subject: 'PORTFOLIO CONTACT FORM',
+        Body: `Name: ${form.name}\r\nEmail: ${form.email}\r\n${form.message}`,
+      });
+
+      if (res === 'OK') {
+        setMessageSent(true);
+        setTimeout(() => {
+          setMessageSent(false);
+        }, 5000);
+
+        setError(false);
+        setForm(INITIAL_CONTACT_FORM);
+      }
+    } catch {
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 5000);
+    }
   };
 
   return (
@@ -56,9 +74,11 @@ const ContactForm = () => {
         onChange={handleChange}
         required
       />
-      <button className="flex items-center justify-between rounded-md p-3 w-2/5 bg-white dark:bg-darkBG my-4 px-4 transition-all duration-300 hover:bg-textHeading dark:hover:bg-darkBGHover">
+      <button className="relative flex items-center justify-between rounded-md p-3 w-2/5 bg-white dark:bg-darkBG my-4 px-4 transition-all duration-300 hover:bg-textHeading dark:hover:bg-darkBGHover">
         <span className="text-xl dark:text-textPara">Send</span>
         <SendSVG className="w-5 lg:w-6 stroke-black dark:stroke-textPara" />
+        {messageSent && <div className="absolute -right-20">success</div>}
+        {error && <div className="absolute -right-20">error</div>}
       </button>
     </form>
   );
