@@ -7,7 +7,6 @@ const INITIAL_CONTACT_FORM = { name: '', email: '', message: '' };
 
 const ContactForm = () => {
   const [form, setForm] = useState(INITIAL_CONTACT_FORM);
-
   const handleChange = e => {
     const { name, value } = e.target;
     setForm(curr => ({ ...curr, [name]: value }));
@@ -15,7 +14,13 @@ const ContactForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
+    window.Email.send({
+      SecureToken: '204ae110-b17b-4ce5-b3c4-0fd530d01c76',
+      To: 'hubertlemczak@gmail.com',
+      From: 'hubertlemczak@gmail.com',
+      Subject: 'PORTFOLIO CONTACT FORM',
+      Body: `Name: ${form.name}\nEmail: ${form.email}\n${form.message}`,
+    }).then(message => alert(message));
     // send me email with form data
     setForm(INITIAL_CONTACT_FORM);
   };
