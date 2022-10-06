@@ -6,11 +6,17 @@ import { ReactComponent as LightModeSVG } from '../../assets/light-mode.svg';
 import mobileMenu from '../../assets/mobile-menu.svg';
 import { Outlet } from 'react-router-dom';
 
-const NavBar = () => {
-  const handleThemeToggle = () => {
-    document.documentElement.classList.toggle('dark');
-  };
+export const handleThemeToggle = () => {
+  document.documentElement.classList.toggle('dark');
 
+  if (document.documentElement.classList.contains('dark')) {
+    sessionStorage.setItem('hubertlemczak-dark-mode', true);
+  } else {
+    sessionStorage.setItem('hubertlemczak-dark-mode', false);
+  }
+};
+
+const NavBar = () => {
   return (
     <>
       <header className="navigation-gradient z-50 fixed right-0 left-0 top-0 px-4">
