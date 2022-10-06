@@ -38,9 +38,10 @@ const About = () => {
             My Skills
           </h4>
           <p className="text-xs dark:text-textPara text-justify">
-            REACT, HTML, CSS, JAVASCRIPT, TYPESCRIPT, GIT, NODEJS, PRISMA,
-            EXPRESS, GITHUB, POSTGRESQL, TAILWINDCSS, STYLED COMPONENTS, FIGMA,
-            JASMINE, JEST
+            React, HTML, CSS, JavaScript, TypeScript, GIT, Node.js, Prisma, SQL,
+            Express, GitHub, Postgres, TailwindCSS, Styled-Components, Figma,
+            Jasmine, Jest, RESTful APIs, Authentication, CI/CD, TDD,
+            ElephantSQL, Socket.io
           </p>
         </div>
       </div>

@@ -27,7 +27,11 @@ const Project = ({ reverse, title, tools, description, image, path }) => {
         >
           {title}
         </h3>
-        <ul className={`flex gap-3 mb-7 max-w-fit ${reverse && 'lg:ml-auto'}`}>
+        <ul
+          className={`flex flex-wrap gap-3 mb-7 max-w-fit ${
+            reverse && 'lg:ml-auto'
+          }`}
+        >
           {tools.map(tool => (
             <li
               key={uniqid()}

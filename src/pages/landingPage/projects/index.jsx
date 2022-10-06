@@ -16,7 +16,15 @@ const Projects = () => {
           any text in this image with Gyazo Pro.Search and copy any text in this
           image with Gyazo Pro.Search and copy any text in this image with
           Gyazo."
-          tools={['React', 'PostgreSQL', 'Express']}
+          tools={[
+            'React',
+            'TypeScript',
+            'Express',
+            'Prisma',
+            'Postgres',
+            'Tailwind',
+            'Socket.io',
+          ]}
           image={EXAMPLE}
           path="classable"
         />
@@ -26,7 +34,15 @@ const Projects = () => {
           any text in this image with Gyazo Pro.Search and copy any text in this
           image with Gyazo Pro.Search and copy any text in this image with
           Gyazo."
-          tools={['React', 'TailwindCSS']}
+          tools={[
+            'React',
+            'TypeScript',
+            'Express',
+            'Prisma',
+            'Postgres',
+            'Tailwind',
+            'Socket.io',
+          ]}
           image={EXAMPLE}
           path="chat-app"
           reverse={true}
@@ -37,7 +53,7 @@ const Projects = () => {
             any text in this image with Gyazo Pro.Search and copy any text in this
             image with Gyazo Pro.Search and copy any text in this image with
             Gyazo."
-          tools={['React', 'PostgreSQL', 'Express']}
+          tools={['React', 'Tailwind']}
           image={EXAMPLE}
           path="manage"
         />
@@ -47,7 +63,7 @@ const Projects = () => {
           any text in this image with Gyazo Pro.Search and copy any text in this
           image with Gyazo Pro.Search and copy any text in this image with
           Gyazo."
-          tools={['React', 'Styled-Components']}
+          tools={['React', 'Firebase', 'Stripe', 'Styled-Components']}
           image={EXAMPLE}
           path="cathort-6"
           reverse={true}
