@@ -19,13 +19,13 @@ const ContactForm = () => {
     e.preventDefault();
     try {
       const res = await window.Email.send({
-        SecureToken: '204ae110-b17b-4ce5-b3c4-0fd530d01c76',
+        SecureToken: 'cfb7c89a-85b5-4b2f-9687-e7183a3de058',
         To: 'hubertlemczak@gmail.com',
-        From: 'hubertlemczak@gmail.com',
+        From: 'web.hubertlemczak@gmail.com',
         Subject: 'PORTFOLIO CONTACT FORM',
-        Body: `Name: ${form.name}\r\nEmail: ${form.email}\r\n${form.message}`,
+        Body: `Name: ${form.name} Email: ${form.email} ${form.message}`,
       });
-
+      console.log(res);
       if (res === 'OK') {
         setMessageSent(true);
         setTimeout(() => {
@@ -34,7 +34,7 @@ const ContactForm = () => {
 
         setError(false);
         setForm(INITIAL_CONTACT_FORM);
-      }
+      } else throw Error;
     } catch {
       setError(true);
       setTimeout(() => {
