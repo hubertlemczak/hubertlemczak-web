@@ -48,16 +48,6 @@ const Projects = () => {
           reverse={true}
         />
         <Project
-          title="Manage"
-          description="Search and copy any text in this image with Gyazo Pro.Search and copy
-            any text in this image with Gyazo Pro.Search and copy any text in this
-            image with Gyazo Pro.Search and copy any text in this image with
-            Gyazo."
-          tools={['React', 'Tailwind']}
-          image={EXAMPLE}
-          path="manage"
-        />
-        <Project
           title="Cathort 6"
           description="Search and copy any text in this image with Gyazo Pro.Search and copy
           any text in this image with Gyazo Pro.Search and copy any text in this
@@ -66,6 +56,13 @@ const Projects = () => {
           tools={['React', 'Firebase', 'Stripe', 'Styled-Components']}
           image={EXAMPLE}
           path="cathort-6"
+        />
+        <Project
+          title="Clones"
+          description="Clones of various websites including Spotify and challenges from Frontend Mentor"
+          tools={[]}
+          image={EXAMPLE}
+          path="clones"
           reverse={true}
         />
       </div>
