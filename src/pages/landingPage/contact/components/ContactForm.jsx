@@ -23,7 +23,7 @@ const ContactForm = () => {
         To: 'hubertlemczak@gmail.com',
         From: 'web.hubertlemczak@gmail.com',
         Subject: 'PORTFOLIO CONTACT FORM',
-        Body: `Name: ${form.name} Email: ${form.email} ${form.message}`,
+        Body: `Name: ${form.name} Email: ${form.email} Message: ${form.message}`,
       });
       console.log(res);
       if (res === 'OK') {
