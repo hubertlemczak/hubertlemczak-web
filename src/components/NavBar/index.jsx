@@ -1,10 +1,12 @@
 import { Link } from 'react-scroll';
+import { Outlet } from 'react-router-dom';
 
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import { ReactComponent as DarkModeSVG } from '../../assets/dark-mode.svg';
 import { ReactComponent as LightModeSVG } from '../../assets/light-mode.svg';
-import mobileMenu from '../../assets/mobile-menu.svg';
-import { Outlet } from 'react-router-dom';
+
+import './mobileMenu.css';
+import MobileMenu from './components/MobileMenu';
 
 export const handleThemeToggle = () => {
   document.documentElement.classList.toggle('dark');
@@ -28,7 +30,7 @@ const NavBar = () => {
               title="Home"
             />
           </Link>
-          <img className="cursor-pointer lg:hidden" src={mobileMenu} alt="" />
+          <MobileMenu />
 
           <ul className="hidden lg:flex items-center dark:text-white gap-10 ">
             <li className="w-20 text-center py-3 cursor-pointer">
@@ -87,7 +89,7 @@ const NavBar = () => {
                 contact
               </Link>
             </li>
-            <li className="cursor-pointer" onClick={handleThemeToggle}>
+            <li className="cursor-pointer w-5" onClick={handleThemeToggle}>
               <DarkModeSVG className="hidden dark:fill-white dark:block" />
               <LightModeSVG className="fill-black dark:hidden" />
             </li>

@@ -4,7 +4,9 @@ import { Outlet } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import { ReactComponent as DarkModeSVG } from '../../assets/dark-mode.svg';
 import { ReactComponent as LightModeSVG } from '../../assets/light-mode.svg';
-import mobileMenu from '../../assets/mobile-menu.svg';
+
+import RouterMobileMenu from './components/RouterMobileMenu';
+
 import { handleThemeToggle } from '.';
 
 const RouterNavBar = () => {
@@ -19,7 +21,7 @@ const RouterNavBar = () => {
               title="Home"
             />
           </Link>
-          <img className="cursor-pointer lg:hidden" src={mobileMenu} alt="" />
+          <RouterMobileMenu />
 
           <ul className="hidden lg:flex items-center dark:text-white gap-10 ">
             <li className="w-20 text-center py-3 cursor-pointer">
