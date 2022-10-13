@@ -40,8 +40,7 @@ const About = () => {
           <p className="text-xs dark:text-textPara text-justify">
             React, HTML, CSS, JavaScript, TypeScript, GIT, Node.js, Prisma, SQL,
             Express, GitHub, Postgres, TailwindCSS, Styled-Components, Figma,
-            Jasmine, Jest, RESTful APIs, Authentication, CI/CD, TDD,
-            ElephantSQL, Socket.io
+            Jasmine, Jest, RESTful APIs, Authentication, CI/CD, TDD, Socket.io
           </p>
         </div>
       </div>
