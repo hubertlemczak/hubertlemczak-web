@@ -15,17 +15,39 @@ const ContactForm = () => {
     setForm(curr => ({ ...curr, [name]: value }));
   };
 
+  const formatMessage = msg => {
+    const splitParagraphs = msg.split('\n');
+    return splitParagraphs.map(para => {
+      return para.length > 0 ? `<p>${para}</p>` : '';
+    });
+  };
+
   const handleSubmit = async e => {
     e.preventDefault();
     try {
+      const msgBody = formatMessage(form.message)
+        .filter(msg => msg !== '')
+        .join('')
+        .toString();
+
       const res = await window.Email.send({
         SecureToken: 'cfb7c89a-85b5-4b2f-9687-e7183a3de058',
         To: 'hubertlemczak@gmail.com',
         From: 'web.hubertlemczak@gmail.com',
         Subject: 'PORTFOLIO CONTACT FORM',
-        Body: `Name: ${form.name} Email: ${form.email} Message: ${form.message}`,
+        Body: `
+          <h2>
+            Name: ${form.name}
+          </h2>
+          <h2>
+            Email: ${form.email}
+          </h2>
+          <h3>
+            Message:
+          </h3>
+          ${msgBody}
+        `,
       });
-      console.log(res);
       if (res === 'OK') {
         setMessageSent(true);
         setTimeout(() => {
