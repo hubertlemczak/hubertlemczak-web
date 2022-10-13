@@ -7,7 +7,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-525.5px * var(--number-of-skills)));
+    transform: translateX(calc(-525.2px * var(--number-of-skills)));
   }
 }
 
@@ -45,7 +45,7 @@
 }
 
 .carousel-track {
-  animation: scroll 15s linear infinite;
+  animation: scroll 30s linear infinite;
   display: flex;
   align-items: center;
   width: calc(526px * calc(var(--number-of-skills) * 2));
