@@ -21,10 +21,19 @@ const Cathort6 = () => {
             Anyway, that&apos;s the site overview done, let&apos;s get into the
             features.
           </p>
-          <img src={SIGNINFORMGIF} alt="" className="mx-auto" />
+          <h2>Animations</h2>
+          <p>asdfsdf</p>
+          <h3>Responsive form design</h3>
+          <img
+            src={SIGNINFORMGIF}
+            alt="Responsive form design with floating labels."
+          />
           <div className="flex gap-10">
-            <img src={CARTGIF} alt="" />
-            <p>
+            <img
+              src={CARTGIF}
+              alt="Shopping cart and wishlist animations, empty list and cart messages"
+            />
+            <p className="mt-8">
               Anyway, that&apos;s the site overview done, let&apos;s get into
               the features.
             </p>
@@ -66,9 +75,10 @@ const Cathort6 = () => {
             features.
           </p>
         </article>
-        <div className="sticky top-52 hidden lg:block flex-shrink-0 w-64 h-max">
+        <div className="sticky top-52 hidden lg:block flex-shrink-0 w-64 h-max text-sm space-y-2">
           <p>Introduction</p>
-          <p className="text-textPara">table of contents table of</p>
+          <p className="text-textPara">Animations</p>
+          <p className="text-textPara ml-4">Responsive form design</p>
         </div>
       </section>
     </div>

@@ -157,6 +157,10 @@ html {
   max-width: 48rem;
 }
 
+.projects-container img {
+  margin-block: 2rem;
+}
+
 .projects-container h2 {
   font-size: 2rem;
   font-weight: bold;
