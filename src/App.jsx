@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <div className="star-bg"></div>
-      <div className="transition-all duration-500 bg-bgLight md:px-5 dark:bg-transparent">
+      <div className="transition-all duration-500 bg-bgLight dark:bg-transparent">
         <Routes>
           <Route path="/" element={<NavBar />}>
             <Route index element={<LandingPage />} />
