@@ -3,7 +3,15 @@ import uniqid from 'uniqid';
 
 import Button from '../../../../components/Button';
 
-const Project = ({ reverse, title, tools, description, image, path }) => {
+const Project = ({
+  reverse,
+  title,
+  tools,
+  theme,
+  description,
+  image,
+  path,
+}) => {
   const navigate = useNavigate();
   return (
     <div
@@ -35,7 +43,7 @@ const Project = ({ reverse, title, tools, description, image, path }) => {
           {tools.map(tool => (
             <li
               key={uniqid()}
-              className="rounded-full text-xs text-white bg-toolBg px-3 py-1"
+              className={`rounded-full text-xs font-bold text-black ${theme} px-3 py-1`}
             >
               {tool}
             </li>

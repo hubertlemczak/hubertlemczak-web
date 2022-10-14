@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 
 const Home = () => {
   return (
-    <section className="relative max-w-1220 mx-auto " id="home">
+    <section className="relative max-w-1220 mx-auto" id="home">
       <div className="flex flex-col items-center lg:block py-48 lg:py-64">
         <div className="max-w-325 mx-auto md:max-w-none px-2">
           <h1 className="dark:text-textHeading text-6xl max-w-lg md:text-7xl font-bold leading-tight lg:max-w-xl">
@@ -25,9 +25,7 @@ const Home = () => {
               offset={-150}
               duration={500}
             >
-              <Button buttonContent="search" search="stroke-white">
-                View Projects
-              </Button>
+              <Button buttonContent="search">View Projects</Button>
             </Link>
             <ArrowSVG className="fill-black dark:fill-white mt-10" />
           </div>

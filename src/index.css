@@ -20,8 +20,9 @@ html {
   position: fixed;
   inset: 0;
   background-image: url('/src/assets/stars.svg');
-  z-index: 0;
   opacity: 0.5;
+  user-select: none;
+  z-index: -10;
 }
 
 .herosvg1 {
@@ -150,4 +151,39 @@ html {
   to {
     background: linear-gradient(rgba(242, 242, 242, 0.6) 63%, transparent);
   }
+}
+
+.projects-container {
+  max-width: 48rem;
+}
+
+.projects-container h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f41a7e;
+  margin-block: 6rem 2rem;
+}
+
+.dark .projects-container h2 {
+  color: #e5d544;
+}
+
+.projects-container h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-block: 4rem 1rem;
+}
+
+.dark .projects-container h3 {
+  color: #dadada;
+}
+
+.projects-container p {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.dark .projects-container p {
+  color: #abaaaa;
 }

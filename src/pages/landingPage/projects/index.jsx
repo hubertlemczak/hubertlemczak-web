@@ -1,4 +1,7 @@
-import EXAMPLE from '../../../assets/example-desktop.png';
+import CLASSABLE from '../../../assets/images/classable.png';
+import CHATAPP from '../../../assets/images/chat-app.png';
+import CATHORT6 from '../../../assets/images/cathort6.png';
+import CLONES from '../../../assets/images/clones.png';
 import Title from '../../../components/Title';
 import Project from './components/Project';
 
@@ -20,12 +23,12 @@ const Projects = () => {
             'React',
             'TypeScript',
             'Express',
-            'Prisma',
             'Postgres',
             'Tailwind',
             'Socket.io',
           ]}
-          image={EXAMPLE}
+          theme="bg-[#2BC48A]"
+          image={CLASSABLE}
           path="classable"
         />
         <Project
@@ -38,12 +41,12 @@ const Projects = () => {
             'React',
             'TypeScript',
             'Express',
-            'Prisma',
             'Postgres',
             'Tailwind',
             'Socket.io',
           ]}
-          image={EXAMPLE}
+          theme="bg-[#FDA172]"
+          image={CHATAPP}
           path="chat-app"
           reverse={true}
         />
@@ -54,14 +57,15 @@ const Projects = () => {
           image with Gyazo Pro.Search and copy any text in this image with
           Gyazo."
           tools={['React', 'Firebase', 'Stripe', 'Styled-Components']}
-          image={EXAMPLE}
+          theme="bg-[#d95d5d]"
+          image={CATHORT6}
           path="cathort-6"
         />
         <Project
           title="Clones"
           description="Clones of various websites including Spotify and challenges from Frontend Mentor"
           tools={[]}
-          image={EXAMPLE}
+          image={CLONES}
           path="clones"
           reverse={true}
         />

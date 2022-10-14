@@ -21,7 +21,7 @@ export const handleThemeToggle = () => {
 const NavBar = () => {
   return (
     <>
-      <header className="navigation-gradient z-50 fixed right-0 left-0 top-0 px-4">
+      <header className="navigation-gradient z-50 fixed right-0 left-0 top-0 px-4 ">
         <nav className="mx-auto max-w-1600 flex justify-between items-center h-32">
           <Link to="home" offset={-150} duration={500} smooth={true}>
             <Logo
@@ -96,7 +96,9 @@ const NavBar = () => {
           </ul>
         </nav>
       </header>
-      <Outlet />
+      <div className="overflow-hidden">
+        <Outlet />
+      </div>
     </>
   );
 };

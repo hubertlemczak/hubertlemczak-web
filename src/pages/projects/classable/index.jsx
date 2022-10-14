@@ -1,36 +1,66 @@
 const Classable = () => {
   return (
-    <section className="relative max-w-5xl mx-auto ">
-      <div className="flex flex-col items-center lg:block py-48 lg:py-64">
-        <div className="max-w-325 mx-auto md:max-w-none px-2">
-          <h1 className="dark:text-textHeading text-6xl max-w-lg md:text-7xl font-bold leading-tight lg:max-w-xl">
-            Delivering quality for your users
-          </h1>
-          <p className="dark:text-textPara md:text-lg max-w-md py-12">
-            I build responsive web apps with a focus on clean and organised
-            code.
-          </p>
-        </div>
-        <div className="max-w-325 mx-auto md:max-w-none px-2">
-          <h1 className="dark:text-textHeading text-6xl max-w-lg md:text-7xl font-bold leading-tight lg:max-w-xl">
-            Delivering quality for your users
-          </h1>
-          <p className="dark:text-textPara md:text-lg max-w-md py-12">
-            I build responsive web apps with a focus on clean and organised
-            code.
-          </p>
-        </div>
-        <div className="max-w-325 mx-auto md:max-w-none px-2">
-          <h1 className="dark:text-textHeading text-6xl max-w-lg md:text-7xl font-bold leading-tight lg:max-w-xl">
-            Delivering quality for your users
-          </h1>
-          <p className="dark:text-textPara md:text-lg max-w-md py-12">
-            I build responsive web apps with a focus on clean and organised
-            code.
-          </p>
-        </div>
+    <div className="px-5 py-48 max-w-max mx-auto">
+      <div className="pb-20 mb-32 border-b dark:border-gray-600">
+        <h1 className="text-4xl font-bold dark:text-textHeading">
+          Classable Project
+        </h1>
+        <span className="dark:text-textPara">An in-depth overview</span>
       </div>
-    </section>
+
+      <section className="flex gap-10">
+        <article className="projects-container">
+          <p>
+            Anyway, that&apos;s the site overview done, let&apos;s get into the
+            features.
+          </p>
+          <p>
+            Anyway, that&apos;s the site overview done, let&apos;s get into the
+            features.
+          </p>
+          <p>
+            Anyway, that&apos;s the site overview done, let&apos;s get into the
+            features.
+          </p>
+          <p>
+            Anyway, that&apos;s the site overview done, let&apos;s get into the
+            features.
+          </p>
+          <p>
+            Anyway, that&apos;s the site overview done, let&apos;s get into the
+            features.
+          </p>
+          <p>
+            Anyway, that&apos;s the site overview done, let&apos;s get into the
+            features.
+          </p>
+          <p>
+            Anyway, that&apos;s the site overview done, let&apos;s get into the
+            features.
+          </p>
+          <p>
+            Anyway, that&apos;s the site overview done, let&apos;s get into the
+            features.
+          </p>
+          <p>
+            Anyway, that&apos;s the site overview done, let&apos;s get into the
+            features.
+          </p>
+          <p>
+            Anyway, that&apos;s the site overview done, let&apos;s get into the
+            features.
+          </p>
+          <p>
+            Anyway, that&apos;s the site overview done, let&apos;s get into the
+            features.
+          </p>
+        </article>
+        <div className="sticky top-52 hidden lg:block flex-shrink-0 w-64 h-max">
+          <p>Introduction</p>
+          <p className="text-textPara">table of contents table of</p>
+        </div>
+      </section>
+    </div>
   );
 };
 
