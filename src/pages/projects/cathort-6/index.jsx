@@ -13,10 +13,7 @@ const Cathort6 = () => {
 
       <section className="flex gap-10">
         <article className="projects-container">
-          <p>
-            Cat lovers, rejoice! Or, if you&apos;re not a cat lover, this site
-            still has the perfect gift: stylish apparel for your furry friend 😬
-          </p>
+    
           <p>
             Anyway, that&apos;s the site overview done, let&apos;s get into the
             features.
