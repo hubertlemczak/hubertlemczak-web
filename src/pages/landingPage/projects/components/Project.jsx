@@ -43,7 +43,7 @@ const Project = ({
           {tools.map(tool => (
             <li
               key={uniqid()}
-              className={`rounded-full text-xs font-bold text-black ${theme} px-3 py-1`}
+              className={`rounded-full text-sm font-bold text-black ${theme} px-3 py-1`}
             >
               {tool}
             </li>
