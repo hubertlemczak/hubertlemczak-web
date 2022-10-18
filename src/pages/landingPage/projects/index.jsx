@@ -15,10 +15,7 @@ const Projects = () => {
       <div className="last-of-type:pb-1">
         <Project
           title="Classable"
-          description="Search and copy any text in this image with Gyazo Pro.Search and copy
-          any text in this image with Gyazo Pro.Search and copy any text in this
-          image with Gyazo Pro.Search and copy any text in this image with
-          Gyazo."
+          description="A feature rich full-stack application designed for online education. Aims to provide an efficient digital community for students and academic staff. Featuring a highly interactive UI, live notifications, chats, resource storage and video call functionality. Let the learning begin with Classable."
           tools={[
             'React',
             'TypeScript',
@@ -32,11 +29,8 @@ const Projects = () => {
           path="classable"
         />
         <Project
-          title="Chat App"
-          description="Search and copy any text in this image with Gyazo Pro.Search and copy
-          any text in this image with Gyazo Pro.Search and copy any text in this
-          image with Gyazo Pro.Search and copy any text in this image with
-          Gyazo."
+          title="Chatter"
+          description="Interactive chat application designed for business and leisure purposes. Featuring authentication, private and group messaging delivered with the Socket.io library for live data transmission."
           tools={[
             'React',
             'TypeScript',
@@ -52,10 +46,7 @@ const Projects = () => {
         />
         <Project
           title="Cathort 6"
-          description="Search and copy any text in this image with Gyazo Pro.Search and copy
-          any text in this image with Gyazo Pro.Search and copy any text in this
-          image with Gyazo Pro.Search and copy any text in this image with
-          Gyazo."
+          description="Designed and delivered an ecommerce store using Stripe to handle payment processes, Firebase and styled components for smooth transitions and animations. "
           tools={['React', 'Firebase', 'Stripe', 'Styled-Components']}
           theme="bg-[#d95d5d]"
           image={CATHORT6}
