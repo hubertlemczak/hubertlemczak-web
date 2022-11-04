@@ -25,7 +25,7 @@ const About = () => {
           <h4 className="font-bold text-sm dark:text-textHeading {/*mt-7*/} mb-2">
             My Skills
           </h4>
-          <p className="text-xs dark:text-textPara text-justify">
+          <p className="text-sm dark:text-textPara text-justify">
             React, HTML, CSS, JavaScript, TypeScript, GIT, Node.js, Prisma, SQL,
             Express, GitHub, Postgres, TailwindCSS, Styled-Components, Figma,
             Jasmine, Jest, RESTful APIs, Authentication, CI/CD, TDD, Socket.io

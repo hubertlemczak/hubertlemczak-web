@@ -46,7 +46,7 @@ const Projects = () => {
         />
         <Project
           title="Cathort 6"
-          description="Designed and delivered an ecommerce store using Stripe to handle payment processes, Firebase and styled components for smooth transitions and animations. "
+          description="Designed and delivered an ecommerce store using Stripe to handle payment processes, Firebase to store data, handle authentication and allow 'Google Sign-in', styled components for smooth transitions and animations. "
           tools={['React', 'Firebase', 'Stripe', 'Styled-Components']}
           theme="bg-[#d95d5d]"
           image={CATHORT6}
@@ -54,7 +54,7 @@ const Projects = () => {
         />
         <Project
           title="Clones"
-          description="Clones of various websites including Spotify and challenges from Frontend Mentor"
+          description="Clones of websites, for targeted skills development, including Spotify and challenges from Frontend Mentor"
           tools={[]}
           image={CLONES}
           path="clones"
