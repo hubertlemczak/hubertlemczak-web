@@ -159,13 +159,14 @@ html {
 
 .projects-container img {
   margin-block: 2rem;
+  border-radius: 6px;
 }
 
 .projects-container h2 {
   font-size: 2rem;
   font-weight: bold;
   color: #f41a7e;
-  margin-block: 6rem 2rem;
+  margin-block: 5rem 2rem;
 }
 
 .dark .projects-container h2 {
@@ -175,7 +176,7 @@ html {
 .projects-container h3 {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-block: 4rem 1rem;
+  margin-block: 3rem 1rem;
 }
 
 .dark .projects-container h3 {

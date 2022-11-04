@@ -1,3 +1,6 @@
+import Contents from '../../../components/Contents';
+import BlogContent from './components/BlogContent';
+
 const Classable = () => {
   return (
     <div className="px-5 py-48 max-w-max mx-auto">
@@ -9,56 +12,8 @@ const Classable = () => {
       </div>
 
       <section className="flex gap-10">
-        <article className="projects-container">
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-        </article>
-        <div className="sticky top-52 hidden lg:block flex-shrink-0 w-64 h-max">
-          <p>Introduction</p>
-          <p className="text-textPara">table of contents table of</p>
-        </div>
+        <BlogContent />
+        <Contents />
       </section>
     </div>
   );

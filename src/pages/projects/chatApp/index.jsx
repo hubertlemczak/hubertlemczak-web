@@ -1,3 +1,5 @@
+import Contents from '../../../components/Contents';
+
 const ChatApp = () => {
   return (
     <div className="px-5 py-48 max-w-max mx-auto">
@@ -55,10 +57,7 @@ const ChatApp = () => {
             features.
           </p>
         </article>
-        <div className="sticky top-52 hidden lg:block flex-shrink-0 w-64 h-max">
-          <p>Introduction</p>
-          <p className="text-textPara">table of contents table of</p>
-        </div>
+        <Contents />
       </section>
     </div>
   );

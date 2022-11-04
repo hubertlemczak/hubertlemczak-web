@@ -18,7 +18,7 @@ function App() {
           </Route>
           <Route path="/projects" element={<RouterNavBar />}>
             <Route path="classable" element={<Classable />} />
-            <Route path="chat-app" element={<ChatApp />} />
+            <Route path="chatter" element={<ChatApp />} />
             <Route path="cathort-6" element={<Cathort6 />} />
           </Route>
         </Routes>
