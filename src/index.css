@@ -155,6 +155,7 @@ html {
 
 .projects-container {
   max-width: 48rem;
+  font-size: 1rem;
 }
 
 .projects-container img {
@@ -163,7 +164,7 @@ html {
 }
 
 .projects-container h2 {
-  font-size: 2rem;
+  font-size: 2em;
   font-weight: bold;
   color: #f41a7e;
   margin-block: 5rem 2rem;
@@ -174,7 +175,7 @@ html {
 }
 
 .projects-container h3 {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   font-weight: bold;
   margin-block: 3rem 1rem;
 }
@@ -184,9 +185,41 @@ html {
 }
 
 .projects-container p {
-  font-size: 1.25rem;
+  font-size: 1.15em;
   line-height: 2rem;
   margin-bottom: 1.5rem;
+}
+
+.projects-container a {
+  color: rgb(145, 161, 251);
+  text-decoration: underline;
+}
+
+.dark .projects-container code {
+  color: white;
+  padding: 1px 6px;
+
+  background-color: #ffffff2a;
+  border-radius: 6px;
+}
+
+.projects-container code {
+  padding: 1px 6px;
+
+  background-color: #0000001b;
+  border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+  .projects-container {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .projects-container {
+    word-break: break-all;
+  }
 }
 
 .dark .projects-container p {
