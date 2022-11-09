@@ -191,12 +191,14 @@ const BlogContent = () => {
         be provided as it will display the default <code>Classable logo</code>.
       </p>
       <p>Let&apos;s view our new course!</p>
+
       <h2>Navigation</h2>
+
       <p>
         Viewing our course takes us to the{' '}
-        <code>/courses/:courseName/dashboard</code>
-        route with the course name formatted for a more appealing look. Our
-        example course <code>Classable Development</code> will look like this:{' '}
+        <code>/courses/:courseName/dashboard</code> route with the course name
+        formatted for a more appealing look. Our example course{' '}
+        <code>Classable Development</code> will look like this:{' '}
         <code>classable-development</code>
       </p>
       <h3> Top navigation bar</h3>
@@ -424,9 +426,9 @@ const BlogContent = () => {
 
       <p>
         When we click on the <code>Add new row</code> or{' '}
-        <code>Add new column</code>
-        button, the button will be replaced with an input field and if there is
-        a valid input value, a new column or row will be created.
+        <code>Add new column</code> button, the button will be replaced with an
+        input field and if there is a valid input value, a new column or row
+        will be created.
       </p>
       <p>
         Viewing the row will open a modal pop-up where we can edit the row title
@@ -470,7 +472,7 @@ const BlogContent = () => {
       <p>
         Using <code>Prisma</code>, we can define our model relations between the{' '}
         <code>Board</code>, <code>BoardColumn</code> and{' '}
-        <code>BoardColumnRow</code> in our relational <code>PostgreSQL</code>
+        <code>BoardColumnRow</code> in our relational <code>PostgreSQL</code>{' '}
         database.
       </p>
       <p>
