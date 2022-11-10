@@ -66,7 +66,6 @@ const Project = ({
             buttonType="inverted"
             onClick={() => {
               navigate(`projects/${path}`);
-              location.reload();
             }}
           >
             View Project

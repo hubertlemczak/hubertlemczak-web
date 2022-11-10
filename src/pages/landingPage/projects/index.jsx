@@ -41,7 +41,7 @@ const Projects = () => {
           ]}
           theme="bg-[#FDA172]"
           image={CHATAPP}
-          path="chat-app"
+          path="chatter"
           reverse={true}
         />
         <Project
