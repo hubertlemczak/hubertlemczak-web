@@ -3,12 +3,13 @@ import { Link } from 'react-scroll';
 
 import { ReactComponent as DarkModeSVG } from '../../../assets/dark-mode.svg';
 import { ReactComponent as LightModeSVG } from '../../../assets/light-mode.svg';
-
-import { handleThemeToggle } from '..';
+import { useTheme } from '../../../context/ThemeContext';
 
 const MobileMenu = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
+
+  const { handleThemeToggle } = useTheme();
 
   const toggleMenu = () => {
     if (menuIsOpen) {

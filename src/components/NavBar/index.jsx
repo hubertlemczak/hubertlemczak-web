@@ -7,18 +7,11 @@ import { ReactComponent as LightModeSVG } from '../../assets/light-mode.svg';
 
 import './mobileMenu.css';
 import MobileMenu from './components/MobileMenu';
-
-export const handleThemeToggle = () => {
-  document.documentElement.classList.toggle('dark');
-
-  if (document.documentElement.classList.contains('dark')) {
-    sessionStorage.setItem('hubertlemczak-dark-mode', true);
-  } else {
-    sessionStorage.setItem('hubertlemczak-dark-mode', false);
-  }
-};
+import { useTheme } from '../../context/ThemeContext';
 
 const NavBar = () => {
+  const { handleThemeToggle } = useTheme();
+
   return (
     <>
       <header className="navigation-gradient z-50 fixed right-0 left-0 top-0 px-4 ">

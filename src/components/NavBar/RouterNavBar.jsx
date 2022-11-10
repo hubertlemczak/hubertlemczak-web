@@ -7,9 +7,11 @@ import { ReactComponent as LightModeSVG } from '../../assets/light-mode.svg';
 
 import RouterMobileMenu from './components/RouterMobileMenu';
 
-import { handleThemeToggle } from '.';
+import { useTheme } from '../../context/ThemeContext';
 
 const RouterNavBar = () => {
+  const { handleThemeToggle } = useTheme();
+
   return (
     <>
       <header className="navigation-gradient z-50 fixed right-0 left-0 top-0 px-4">
