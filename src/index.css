@@ -206,6 +206,40 @@ html {
   border-radius: 6px;
 }
 
+.projects-container ul {
+  color: white;
+  margin-left: 40px;
+  margin-bottom: 1.5rem;
+}
+
+.projects-container ul li::before {
+  content: '';
+  position: absolute;
+  margin-top: 5px;
+  left: -25px;
+  width: 20px;
+  height: 20px;
+  background-image: url(./assets/images/list.png);
+  background-size: cover;
+}
+
+.dark .projects-container ul li::before {
+  background-image: url(./assets/images/list-dark.png);
+}
+
+.projects-container li {
+  position: relative;
+  font-size: 1.15em;
+  line-height: 2rem;
+  color: black;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.dark .projects-container li {
+  color: #abaaaa;
+}
+
 .code-container {
   position: absolute;
   max-width: 100%;
@@ -221,23 +255,19 @@ html {
 .dark .code-container code {
   background-color: rgb(45, 45, 45);
 }
-
 .code-container span {
   font-family: monospace !important;
 }
-
 @media (max-width: 600px) {
   .projects-container {
     font-size: 0.85rem;
   }
 }
-
 @media (max-width: 350px) {
   .projects-container {
     word-break: break-all;
   }
 }
-
 .dark .projects-container p {
   color: #abaaaa;
 }

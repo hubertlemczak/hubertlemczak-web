@@ -72,52 +72,56 @@ const BlogContent = () => {
           Page Wireframes
         </a>
       </div>
-      <h3> Tools used</h3>
-      <ul>
-        <li>React</li>
-        <li>TypeScript</li>
-        <li>TailwindCSS</li>
-        <li>Styled-Components</li>
-        <li>Express</li>
-        <li>Prisma</li>
-        <li>PostgreSQL</li>
-        <li>Supabase</li>
-        <li>
-          <a
-            href="https://docs.agora.io/en/video-calling/get-started/get-started-sdk"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Agora.io
-          </a>
-        </li>
-        <li>
-          <a href="https://socket.io/" target="_blank" rel="noreferrer">
-            Socket.io
-          </a>
-        </li>
-        <li>jsonwebtoken</li>
-        <li>
-          <a
-            href="https://github.com/hello-pangea/dnd"
-            target="_blank"
-            rel="noreferrer"
-          >
-            @hello-pangea/dnd
-          </a>
-        </li>
-        <li>Jest</li>
-        <li>bcrypt</li>
-        <li>
-          <a
-            href="https://www.npmjs.com/package/ts-node-dev"
-            target="_blank"
-            rel="noreferrer"
-          >
-            ts-node-dev
-          </a>
-        </li>
-      </ul>
+
+      <h3>Tools used</h3>
+
+      <div className="max-w-sm w-max mx-auto">
+        <ul className="grid  sm:odd:-mr-20 xs:grid-cols-2">
+          <li>React</li>
+          <li>TypeScript</li>
+          <li>TailwindCSS</li>
+          <li>Styled-Components</li>
+          <li>Express</li>
+          <li>Prisma</li>
+          <li>PostgreSQL</li>
+          <li>Supabase</li>
+          <li>
+            <a
+              href="https://docs.agora.io/en/video-calling/get-started/get-started-sdk"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Agora.io
+            </a>
+          </li>
+          <li>
+            <a href="https://socket.io/" target="_blank" rel="noreferrer">
+              Socket.io
+            </a>
+          </li>
+          <li>jsonwebtoken</li>
+          <li>
+            <a
+              href="https://github.com/hello-pangea/dnd"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @hello-pangea/dnd
+            </a>
+          </li>
+          <li>Jest</li>
+          <li>bcrypt</li>
+          <li>
+            <a
+              href="https://www.npmjs.com/package/ts-node-dev"
+              target="_blank"
+              rel="noreferrer"
+            >
+              ts-node-dev
+            </a>
+          </li>
+        </ul>
+      </div>
 
       <h2>Express error handling middleware</h2>
 
@@ -264,7 +268,7 @@ const token = req.headers.authorization?.trim().split(' ')[1];`}
         className="max-w-xs w-full mx-auto"
       />
 
-      <h3> Roles and authorisation</h3>
+      <h3>Roles and authorisation</h3>
 
       <p>
         We can also invite users to our course with the search by email feature.
@@ -319,7 +323,7 @@ function handleChange(e) {
         code={`const coursePath = name.toLowerCase().replaceAll(' ', '-');`}
       />
 
-      <h3> Top navigation bar</h3>
+      <h3>Top navigation bar</h3>
       <img src={DESKTOP_NAVBAR} alt="Desktop navbar." className="mx-auto" />
       <img
         src={MOBILE_NAVBAR}
@@ -332,7 +336,7 @@ function handleChange(e) {
         icon also reveals additional settings the user can interact with.
       </p>
       <p>The features are fully responsive on mobile devices.</p>
-      <h3> Sidebar</h3>
+      <h3>Sidebar</h3>
       <div className="flex flex-wrap justify-center gap-4">
         <img src={DESKTOP_SIDEBAR} alt="Desktop sidebar." />
         <img src={MOBILE_SIDEBAR} alt="Mobile responsive sidebar." />
@@ -558,13 +562,12 @@ agoraClient.publish(tracks);
             deleting them from state.
           </span>
         </li>
+        <img
+          src={SHARE_SCREEN_PROMPT}
+          alt="Browser share screen pop-up askin user to choose which screen to share."
+          className="mx-auto"
+        />
         <li>
-          <img
-            src={SHARE_SCREEN_PROMPT}
-            alt="Browser share screen pop-up askin user to choose which screen to share."
-            className="mx-auto"
-          />
-
           <span>
             Start and stop screen share. Clicking the button will show a pop-up
             screen share prompt asking the user to select which contents they
@@ -620,7 +623,7 @@ agoraClient.publish(tracks);
         resource, where they can perform various <code>CRUD</code> operations
         for customisation.
       </p>
-      <h3> Boards with drag and drop library</h3>
+      <h3>Boards with drag and drop library</h3>
       <p>
         Let&apos;s view <code>Classable Dev Board</code> to explore how I
         created this interactive Kanban board by implementing the{' '}
@@ -715,7 +718,7 @@ handle our state changes after a "Draggable" component within is dropped */}
         className="mx-auto"
       />
 
-      <h3> Persisting board state</h3>
+      <h3>Persisting board state</h3>
       <p>
         Using <code>Prisma</code>, we can define our model relations between the{' '}
         <code>Board</code>, <code>BoardColumn</code> and{' '}
@@ -769,7 +772,7 @@ model BoardColumnRow {
         the changes.
       </p>
       <p>After refreshing the page, all of the new changes will persist.</p>
-      <h3> Notes with markdown parsing</h3>
+      <h3>Notes with markdown parsing</h3>
       <p>
         Let&apos;s view <code>Classable readme</code> to explore how I created
         this interactive note editor by implementing the{' '}
@@ -834,9 +837,9 @@ li > ul > li {
 </StyledMdContainer>`}
       />
 
-      <h2> Messages</h2>
-      <h3> Real time chat messaging with socket.io</h3>
-      <h3> Ticket support system</h3>
+      <h2>Messages</h2>
+      <h3>Real time chat messaging with socket.io</h3>
+      <h3>Ticket support system</h3>
       <h2 className="line-through">Calendar</h2>
     </article>
   );
