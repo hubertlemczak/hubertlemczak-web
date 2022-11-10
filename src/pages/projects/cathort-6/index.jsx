@@ -1,4 +1,4 @@
-import Contents from '../../../components/Contents';
+// import Contents from '../../../components/Contents';
 import BlogContent from './components/BlogContent';
 
 const Cathort6 = () => {
@@ -13,7 +13,7 @@ const Cathort6 = () => {
 
       <section className="flex gap-10">
         <BlogContent />
-        <Contents />
+        {/* <Contents /> */}
       </section>
     </div>
   );

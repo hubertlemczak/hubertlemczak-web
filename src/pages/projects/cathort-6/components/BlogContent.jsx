@@ -1,10 +1,16 @@
-import SIGNINFORMGIF from '../assets/sign-in-form.gif';
-import CARTGIF from '../assets/cart.gif';
+// import SIGNINFORMGIF from '../assets/sign-in-form.gif';
+// import CARTGIF from '../assets/cart.gif';
+
+import { Link } from 'react-router-dom';
 
 const BlogContent = () => {
   return (
     <article className="projects-container">
-      <p>
+      <h1>
+        Project blog Coming Soon.{' '}
+        <Link to="/projects/classable">View Classable in the meantime!</Link>
+      </h1>
+      {/* <p>
         Anyway, that&apos;s the site overview done, let&apos;s get into the
         features.
       </p>
@@ -28,7 +34,7 @@ const BlogContent = () => {
       <p>
         Anyway, that&apos;s the site overview done, let&apos;s get into the
         features.
-      </p>
+      </p> */}
     </article>
   );
 };

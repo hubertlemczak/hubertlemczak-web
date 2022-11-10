@@ -1,4 +1,5 @@
-import Contents from '../../../components/Contents';
+// import Contents from '../../../components/Contents';
+import BlogContent from './components/BlogContent';
 
 const ChatApp = () => {
   return (
@@ -11,53 +12,8 @@ const ChatApp = () => {
       </div>
 
       <section className="flex gap-10">
-        <article className="projects-container">
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-          <p>
-            Anyway, that&apos;s the site overview done, let&apos;s get into the
-            features.
-          </p>
-        </article>
-        <Contents />
+        <BlogContent />
+        {/* <Contents /> */}
       </section>
     </div>
   );

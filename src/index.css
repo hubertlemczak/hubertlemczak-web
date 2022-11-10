@@ -197,17 +197,28 @@ html {
 
 .dark .projects-container code {
   color: white;
-  padding: 1px 6px;
-
   background-color: #ffffff2a;
-  border-radius: 6px;
 }
 
 .projects-container code {
   padding: 1px 6px;
-
   background-color: #0000001b;
   border-radius: 6px;
+}
+
+.code-container {
+  position: absolute;
+  max-width: 100%;
+}
+
+.code-container code {
+  width: 3000px;
+
+  padding: 16px !important;
+  background-color: initial;
+}
+.code-container span {
+  font-family: monospace !important;
 }
 
 @media (max-width: 600px) {

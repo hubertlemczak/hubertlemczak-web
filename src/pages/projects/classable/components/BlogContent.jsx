@@ -6,6 +6,7 @@ import DESKTOP_NAVBAR from '../assets/desktop-navbar.png';
 import MOBILE_NAVBAR from '../assets/navbar-dropdown.webp';
 import DESKTOP_SIDEBAR from '../assets/sidebar.webp';
 import MOBILE_SIDEBAR from '../assets/mobile-sidebar.png';
+import COURSEADMIN_SETTINGS from '../assets/courseadmin-settings.png';
 import VIDEO_CALL from '../assets/video-call.png';
 import CLASSROOM_LIST from '../assets/classroom-list.png';
 import CREATE_CLASSROOM from '../assets/create-classroom.png';
@@ -20,6 +21,7 @@ import EDITABLE_TITLE from '../assets/board-title.webp';
 import KANBAN_WIREFRAME from '../assets/kanban-wireframe.png';
 import NOTES_VIEW from '../assets/notes-view.png';
 import CONTENT_EDIT from '../assets/content-edit.png';
+import Code from '../../../../components/CodeBlock';
 
 const BlogContent = () => {
   return (
@@ -116,7 +118,9 @@ const BlogContent = () => {
           </a>
         </li>
       </ul>
+
       <h2>Express error handling middleware</h2>
+
       <p>
         Using{' '}
         <a
@@ -128,11 +132,67 @@ const BlogContent = () => {
         </a>{' '}
         we can create a &apos;catch-all&apos; middleware for errors.
       </p>
+
+      <Code
+        className="h-[10.3125em]"
+        language="ts"
+        code={`// First we require the package
+require('express-async-errors');
+    
+// We can now use our error handling middleware
+app.use(errorHandler);`}
+      />
+
+      <Code
+        className="h-[22em]"
+        language="ts"
+        code={`// Custom error class to throw known errors
+export class HttpException extends Error {
+  status: number;
+  constructor(status: number, message: string) {
+    super(message);
+    this.status = status;
+  }
+}
+// example use case
+if (!isValid) {
+    throw new HttpException(403, 'Invalid credentials');
+}`}
+      />
+
+      <Code
+        className="h-[28.75em]"
+        language="ts"
+        code={`// We can use the ErrorRequestHandler type from express
+const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
+  /* Checking the instance of the error and error codes allows us to respond 
+  with valuable error messages */
+  if (err instanceof HttpException) {
+    return res.status(err.status).json({ error: err.message });
+  }
+
+  if (err instanceof PrismaClientKnownRequestError) {
+    if (err.code === 'P2002') {
+      return res
+        .status(400)
+        .json({ error: \`\${err?.meta?.target} already in use\` });
+    }
+  }
+};`}
+      />
+
       <h2>Authentication</h2>
+
       <p>
         API endpoints can be protected behind an authentication middleware layer
         like so:
       </p>
+
+      <Code
+        className="h-[3.75em]"
+        language="ts"
+        code={`api.get('/users/:id', authenticateUser, usersController.getById);`}
+      />
       <p>
         But before a user can be authenticated, they will need to create or log
         into an existing account to receive a <code>Bearer token</code> from the
@@ -145,16 +205,48 @@ const BlogContent = () => {
         authorization header containing a valid <code>Bearer token</code>, or an
         exception will be thrown and caught by the error handling middleware.
       </p>
+
+      <Code
+        className="h-[22em]"
+        language="ts"
+        code={`// client
+get: async path => {
+    const token = localStorage.getItem('classable-token');
+    const headers = {
+        Authorization: \`Bearer \${token}\`,
+    };
+
+    return axios.get(\`\${host}\${path}\`, { headers });
+},
+
+// server
+const token = req.headers.authorization?.trim().split(' ')[1];`}
+      />
+
       <p>
         From the decoded token, we can find the user in our database and attach
         the following data to the request object:
       </p>
+
+      <Code
+        className="h-[12em]"
+        language="ts"
+        code={`req.user = {
+    id: user.id,
+    email: user.email,
+    firstName: user.profile?.firstName,
+    lastName: user.profile?.lastName,
+};`}
+      />
+
       <p>
         We call the <code>next()</code> function and are now able to access the
         user who is making the request further down the line in our controller
         functions.
       </p>
+
       <h2>Course creation</h2>
+
       <p>
         Users are able to create their own course and they will automatically be
         assigned the <code>COURSEADMIN</code> role on creation. A user can have
@@ -171,13 +263,32 @@ const BlogContent = () => {
         alt="Create course form."
         className="max-w-xs w-full mx-auto"
       />
+
       <h3> Roles and authorisation</h3>
+
       <p>
         We can also invite users to our course with the search by email feature.
         When we type into the search field there will not be any API calls,
         however if we wait 500ms without any input an API call will be made to
         search for users containing the inputted email.
       </p>
+
+      <Code
+        className="h-[20.375em]"
+        language="ts"
+        code={`let timeOut;
+
+function handleChange(e) {
+  ...
+  clearTimeout(timeOut);
+
+  timeOut = setTimeout(() => {
+    setGetUsers(true);
+  }, 500);
+  ...
+}`}
+      />
+
       <p>
         The user is able to invite found users to the course and select a role
         for them (from the roles listed above), or remove them from the invite
@@ -201,6 +312,13 @@ const BlogContent = () => {
         <code>Classable Development</code> will look like this:{' '}
         <code>classable-development</code>
       </p>
+
+      <Code
+        className="h-[3.6875em]"
+        language="ts"
+        code={`const coursePath = name.toLowerCase().replaceAll(' ', '-');`}
+      />
+
       <h3> Top navigation bar</h3>
       <img src={DESKTOP_NAVBAR} alt="Desktop navbar." className="mx-auto" />
       <img
@@ -218,6 +336,11 @@ const BlogContent = () => {
       <div className="flex flex-wrap justify-center gap-4">
         <img src={DESKTOP_SIDEBAR} alt="Desktop sidebar." />
         <img src={MOBILE_SIDEBAR} alt="Mobile responsive sidebar." />
+        <img
+          src={COURSEADMIN_SETTINGS}
+          alt="Desktop navbar."
+          className="h-max self-end"
+        />
       </div>
       <p>
         Each route has a custom active SVG. The line svg is replaced with the
@@ -225,9 +348,25 @@ const BlogContent = () => {
         throughout the app. This sidebar is present for every route in the
         course view and the <code>Outlet</code> component from{' '}
         <code>react-router-dom</code> is wrapped in a styled-component, making
-        the site have a fixed height look.
+        the site have a fixed height look. An additional <code>Settings</code>{' '}
+        tab will appear in courses where the user has the{' '}
+        <code>COURSEADMIN</code> role
       </p>
+
+      <Code
+        className="h-[13.75em]"
+        language="ts"
+        code={`export const OutletContainer = styled.div\`
+  overflow-y: scroll;
+  margin-top: 100px;
+  padding: 20px;
+  max-height: calc(100vh - 100px);
+  width: 100%;
+\`;`}
+      />
+
       <h2>Live video calls</h2>
+
       <p>
         The implementation of this feature was easily the most exciting out of
         the rest, and the one I also spent the most time on. It was an enjoyable
@@ -284,6 +423,47 @@ const BlogContent = () => {
         <code>token</code> to join it.
       </p>
       <p>Let&apos;s see how this works on the server!</p>
+
+      <Code
+        className="h-[60.3125em]"
+        language="ts"
+        code={`// Client requests to join and provides password if needed
+const res = await client.post(\`/classrooms/\${id}\`, {
+  password: passwordInput,
+});
+
+// Server
+async function createToken(req: TRequestWithUser, res: Response) {
+  const { password } = req.body;
+  const { id } = req.params;
+
+  const course = await dbClient.classroom.findFirstOrThrow({
+    where: { id },
+  });
+
+  /* If our found classroom requires a password, we will begin to compare 
+  the user input using our "compareStringToHash" helper function */
+  if (course.password) {
+    const isValid = await compareStringToHash(password, course.password);
+
+    // Using our custom error class to throw useful messages
+    if (!isValid) {
+      throw new HttpException(403, 'Invalid password');
+    }
+  }
+
+  /* Since the request was handled by the authentication middleware, we 
+  can be sure that the user data exists on the request object */
+  const userId = req.user?.id as string;
+
+  // We can now create our token (see below function)...
+  const token = getRtcToken(course.name, userId);
+
+  // ...and respond to the client
+  res.status(201).json({ token });
+}`}
+      />
+
       <p>
         Useful link:{' '}
         <a href="https://www.npmjs.com/package/agora-access-token">
@@ -291,12 +471,56 @@ const BlogContent = () => {
         </a>{' '}
         package.
       </p>
+
+      <Code
+        className="h-[43.75em]"
+        language="ts"
+        code={`function getRtcToken(name: string, uid: string) {
+  // These secrets can be found in your Agora.io project console
+  const APP_ID = process.env.AGORA_APP_ID;
+  const APP_CERTIFICATE = process.env.AGORA_APP_CERTIFICATE;
+
+  if (!APP_ID || !APP_CERTIFICATE) {
+    throw new HttpException(500, 'Live video application error');
+  }
+
+  // Current time in seconds (ECMAScript epoch)
+  const currentTime = Math.floor(Date.now() / 1000);
+  // One hour expiry time for the token
+  const expiryTime = currentTime + 3600;
+
+  /* Using the agora-access-token npm package to create the token,
+  which will only work for our room */
+  return RtcTokenBuilder.buildTokenWithUid(
+    APP_ID,
+    APP_CERTIFICATE,
+    name,
+    uid,
+    1,
+    expiryTime
+  );
+}`}
+      />
+
       <p>
         We now have our <code>Agora token</code> on our client, the next steps
         are to navigate to the correct route, initiate the{' '}
         <code>Agora engine</code>, join the channel and publish the users video
         and audio tracks.
       </p>
+
+      <Code
+        className="h-[13.75em]"
+        language="ts"
+        code={`navigate(\`./\${id}\`, { state: { channel: name, token } });
+
+...
+await agoraClient.join(appId, channel, token, user.id);
+// Audio and video tracks from "AgoraRTC.createMicrophoneAndCameraTracks"
+agoraClient.publish(tracks);
+...`}
+      />
+
       <p>
         While the client is connecting, a reusable spinner component can be seen
         to represent the loading state.
@@ -437,6 +661,29 @@ const BlogContent = () => {
         notes resource section.
       </p>
       <p>The drag and drop library has the following three main components:</p>
+
+      <Code
+        className="h-[30.375em]"
+        language="jsx"
+        code={`{/* The DragDropContext which we will pass a "onDragEnd" function to 
+handle our state changes after a "Draggable" component within is dropped */} 
+<DragDropContext onDragEnd={onDragEnd}>
+
+  {/* The Droppable component which will require a unique id and we can 
+  specify options such as the direction or type of the droppable */} 
+  <Droppable droppableId={board.id} direction="horizontal" type="column">
+
+    {/* The Draggable component, which must be dropped in a "Droppable", will 
+    again require a unique id and an index to manage the order of our components */} 
+    <Draggable draggableId={id} index={index}>
+
+    </Draggable>
+
+  </Droppable>
+
+</DragDropContext>`}
+      />
+
       <p>
         To get a better understanding of how each of these components are used,
         we can take a look at our wireframe below.
@@ -475,6 +722,36 @@ const BlogContent = () => {
         <code>BoardColumnRow</code> in our relational <code>PostgreSQL</code>{' '}
         database.
       </p>
+
+      <Code
+        className="h-[42em]"
+        language="js"
+        code={`model Board {
+  columns BoardColumn[]
+
+  ...
+}
+
+model BoardColumn {
+  position  Int
+  boardId   String
+  rows      BoardColumnRow[]
+
+  board     Board @relation(fields: [boardId], references: [id], onDelete: Cascade)
+
+  ...
+}
+
+model BoardColumnRow {
+  position      Int
+  boardColumnId String
+
+  column        BoardColumn @relation(fields: [boardColumnId], references: [id], onDelete: Cascade)
+
+  ...
+}`}
+      />
+
       <p>
         The <code>Board</code> model has a <code>one-to-many</code> relation
         with <code>BoardColumn</code>, meaning our board can have many columns.
@@ -532,6 +809,31 @@ const BlogContent = () => {
         className="mx-auto"
       />
 
+      <Code
+        className="h-[20.3125em]"
+        language="css"
+        code={`/* Using styled-components we can declare specific styling of the parsed 
+markdown such as our list and sub-list elements */
+li {
+  list-style-type: disc;
+  margin-left: 30px;
+  padding-left: 10px;
+}
+
+li > ul > li {
+  list-style-type: circle;
+}`}
+      />
+
+      <Code
+        className="h-[8.6875em]"
+        language="jsx"
+        code={`// We can now wrap the ReactMarkdown component with our styled component
+<StyledMdContainer>
+  <ReactMarkdown>{note.content}</ReactMarkdown>
+</StyledMdContainer>`}
+      />
+
       <h2> Messages</h2>
       <h3> Real time chat messaging with socket.io</h3>
       <h3> Ticket support system</h3>
@@ -541,65 +843,3 @@ const BlogContent = () => {
 };
 
 export default BlogContent;
-
-{
-  /* 
-// ```
-// // Introduction h2
-//   // Purpose of the project
-//   // quick feature overview
-//   // tech used
-
-// // Firebase h2
-//   // Authentication and Firestore h3
-//     // Sign in with google
-//     // Sign in with email and password
-//     // firebase authentication use code examples
-
-// // Store Products h2
-//   // can add products to basket which updates the shopping cart context
-//   // can click on product to view in more details, select size and add to basket or wishlist
-
-//     // Shopping cart and wishlist h3
-//       // contexts and state management
-//       // animations
-//       // empty states
-
-//     // Styling with styled components h3
-//       // Styled Components uses a technique called CSS-in-JS, so you simply write your normal CSS code inside of template literals in a js file. I use the .styled.js extension to easily distinguish my styles. An interesting feature I experimented with in this project was passing props to the styled component, which can then be accessed in your .styled.js file
-//       // theme provider
-//       // reusable component button
-
-// // Checkout h2
-//   // styling and reusing components from the shopping cart
-
-//     // Setting up the express server h3
-//       // npm i express cors
-//       // middleware to access req.body
-
-//     // Secure payments with Stripe h3
-//       // npm i stripe
-//       // paymentIntent created on the server
-//       // client secret used on client side to render the PaymentElement
-
-//     // //
-//     //   app.post('/create-payment-intent', async (req, res) => {
-
-//     //   });
-//     // //
-//     //   const { amount } = req.body;
-
-//     //   const paymentIntent = await stripe.paymentIntents.create({
-//     //     amount,
-//     //     currency: 'gbp',
-//     //     automatic_payment_methods: {
-//     //       enabled: true,
-//     //     },
-//     //   });
-//     // //
-//     //   const clientSecret = paymentIntent.client_secret;
-
-//     //   res.status(201).json({ clientSecret });
-//     // //
-//     ```; */
-}
