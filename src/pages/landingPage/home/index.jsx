@@ -11,7 +11,7 @@ const Home = () => {
           <h1 className="dark:text-textHeading text-6xl max-w-lg md:text-7xl font-bold leading-tight lg:max-w-xl">
             Delivering quality for your users
           </h1>
-          <p className="dark:text-textPara md:text-lg max-w-md py-12">
+          <p className="dark:text-textPara text-lg max-w-md py-12">
             I build responsive web apps with a focus on clean and organised
             code.
           </p>
@@ -31,7 +31,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <HeroSVG className="absolute scale-50 -top-1/3 right-1/2 translate-x-1/2 md:z-10 lg:scale-110 lg:-top-40 lg:-right-1/3 lg:translate-x-44" />
+      <HeroSVG className="absolute scale-75 -top-1/3 right-1/2 translate-x-1/2 -z-10 xl:z-10 md:scale-125 lg:scale-150 lg:-top-40 lg:-right-1/3 lg:translate-x-44 lg:stroke-2" />
     </section>
   );
 };
