@@ -217,6 +217,11 @@ html {
   padding: 16px !important;
   background-color: initial;
 }
+
+.dark .code-container code {
+  background-color: rgb(45, 45, 45);
+}
+
 .code-container span {
   font-family: monospace !important;
 }
