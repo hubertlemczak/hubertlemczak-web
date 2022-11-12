@@ -60,16 +60,24 @@ const RouterMobileMenu = () => {
             }`}
           >
             <li className="w-24 py-3 cursor-pointer">
-              <Link to={{ pathname: '/', hash: '#home' }}>home</Link>
+              <Link to={{ pathname: '/', hash: '#home' }} reloadDocument>
+                home
+              </Link>
             </li>
             <li className="w-24 py-3 cursor-pointer">
-              <Link to={{ pathname: '/', hash: '#projects' }}>projects</Link>
+              <Link to={{ pathname: '/', hash: '#projects' }} reloadDocument>
+                projects
+              </Link>
             </li>
             <li className="w-24 py-3 cursor-pointer">
-              <Link to={{ pathname: '/', hash: '#about' }}>about</Link>
+              <Link to={{ pathname: '/', hash: '#about' }} reloadDocument>
+                about
+              </Link>
             </li>
             <li className="w-24 py-3 cursor-pointer">
-              <Link to={{ pathname: '/', hash: '#contact' }}>contact</Link>
+              <Link to={{ pathname: '/', hash: '#contact' }} reloadDocument>
+                contact
+              </Link>
             </li>
             <li
               className="cursor-pointer w-5 mt-auto"

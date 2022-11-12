@@ -36,6 +36,7 @@ const NavBar = () => {
                 offset={-150}
                 duration={500}
                 className="py-3 px-2"
+                saveHashHistory={false}
               >
                 home
               </Link>
@@ -50,6 +51,7 @@ const NavBar = () => {
                 offset={-150}
                 duration={500}
                 className="py-3 px-3"
+                saveHashHistory={false}
               >
                 projects
               </Link>
@@ -64,6 +66,7 @@ const NavBar = () => {
                 offset={-150}
                 duration={500}
                 className="py-3 px-2"
+                saveHashHistory={false}
               >
                 about
               </Link>
@@ -78,6 +81,7 @@ const NavBar = () => {
                 offset={-150}
                 duration={500}
                 className="py-3 px-2"
+                saveHashHistory={false}
               >
                 contact
               </Link>
