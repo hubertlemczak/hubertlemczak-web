@@ -5,12 +5,12 @@ import Projects from './projects';
 
 const LandingPage = () => {
   return (
-    <>
+    <div className="sm:px-5">
       <Home />
       <Projects />
       <About />
       <Contact />
-    </>
+    </div>
   );
 };
 
