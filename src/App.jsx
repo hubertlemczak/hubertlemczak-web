@@ -6,6 +6,7 @@ import Classable from './pages/projects/classable';
 import LandingPage from './pages/landingPage';
 import ChatApp from './pages/projects/chatApp';
 import Cathort6 from './pages/projects/cathort-6';
+import Clones from './pages/projects/clones';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="classable" element={<Classable />} />
             <Route path="chatter" element={<ChatApp />} />
             <Route path="cathort-6" element={<Cathort6 />} />
+            <Route path="clones" element={<Clones />} />
           </Route>
         </Routes>
       </div>
