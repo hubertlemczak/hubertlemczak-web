@@ -9,7 +9,7 @@ function Sections({ sections, activeId }) {
             href={'#' + section.id}
             className={`block mb-2 hover:text-black hover:dark:text-white ${
               activeId === section.id &&
-              'text-[#cd2875] dark:text-[#e5d544] font-bold'
+              'text-[#cd2875] dark:text-[#e5d544] font-bold hover:text-[#cd2875] dark:hover:text-[#e5d544]'
             }`}
             onClick={e => smoothScrollTo(e, section.id)}
           >
@@ -23,7 +23,7 @@ function Sections({ sections, activeId }) {
                     href={'#' + child.id}
                     className={`block mb-2 hover:text-black hover:dark:text-white ${
                       activeId === child.id &&
-                      'text-[#f41a7e] dark:text-[#e5d544] font-bold'
+                      'text-[#f41a7e] dark:text-[#e5d544] font-bold hover:text-[#cd2875] dark:hover:text-[#e5d544]'
                     }`}
                     onClick={e => smoothScrollTo(e, child.id)}
                   >
