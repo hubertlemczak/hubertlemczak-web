@@ -158,6 +158,10 @@ html {
   font-size: 1rem;
 }
 
+.projects-container * {
+  scroll-margin-top: 200px;
+}
+
 .projects-container img {
   margin-block: 2rem;
   border-radius: 6px;
