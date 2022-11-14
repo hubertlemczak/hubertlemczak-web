@@ -150,48 +150,48 @@ const BlogContent = () => {
           className="h-[10.3125em]"
           language="ts"
           code={`// First we require the package
-  require('express-async-errors');
-  
-  // We can now use our error handling middleware
-  app.use(errorHandler);`}
+require('express-async-errors');
+
+// We can now use our error handling middleware
+app.use(errorHandler);`}
         />
 
         <Code
           className="h-[22em]"
           language="ts"
           code={`// Custom error class to throw known errors
-  export class HttpException extends Error {
-    status: number;
-    constructor(status: number, message: string) {
-      super(message);
-      this.status = status;
-    }
+export class HttpException extends Error {
+  status: number;
+  constructor(status: number, message: string) {
+    super(message);
+    this.status = status;
   }
-  // example use case
-  if (!isValid) {
-      throw new HttpException(403, 'Invalid credentials');
-  }`}
+}
+// example use case
+if (!isValid) {
+    throw new HttpException(403, 'Invalid credentials');
+}`}
         />
 
         <Code
           className="h-[28.75em]"
           language="ts"
           code={`// We can use the ErrorRequestHandler type from express
-  const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
-    /* Checking the instance of the error and error codes allows us to respond
-    with valuable error messages */
-    if (err instanceof HttpException) {
-      return res.status(err.status).json({ error: err.message });
+const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
+  /* Checking the instance of the error and error codes allows us to respond
+  with valuable error messages */
+  if (err instanceof HttpException) {
+    return res.status(err.status).json({ error: err.message });
+  }
+
+  if (err instanceof PrismaClientKnownRequestError) {
+    if (err.code === 'P2002') {
+      return res
+        .status(400)
+        .json({ error: \`\${err?.meta?.target} already in use\` });
     }
-  
-    if (err instanceof PrismaClientKnownRequestError) {
-      if (err.code === 'P2002') {
-        return res
-          .status(400)
-          .json({ error: \`\${err?.meta?.target} already in use\` });
-      }
-    }
-  };`}
+  }
+};`}
         />
       </section>
 
@@ -231,12 +231,12 @@ const BlogContent = () => {
           language="ts"
           code={`// client
 get: async path => {
-    const token = localStorage.getItem('classable-token');
-    const headers = {
-        Authorization: \`Bearer \${token}\`,
-    };
+  const token = localStorage.getItem('classable-token');
+  const headers = {
+    Authorization: \`Bearer \${token}\`,
+  };
 
-    return axios.get(\`\${host}\${path}\`, { headers });
+  return axios.get(\`\${host}\${path}\`, { headers });
 },
 
 // server
@@ -252,10 +252,10 @@ const token = req.headers.authorization?.trim().split(' ')[1];`}
           className="h-[12em]"
           language="ts"
           code={`req.user = {
-    id: user.id,
-    email: user.email,
-    firstName: user.profile?.firstName,
-    lastName: user.profile?.lastName,
+  id: user.id,
+  email: user.email,
+  firstName: user.profile?.firstName,
+  lastName: user.profile?.lastName,
 };`}
         />
 
@@ -309,14 +309,14 @@ const token = req.headers.authorization?.trim().split(' ')[1];`}
             language="ts"
             code={`let timeOut;
           
-            function handleChange(e) {
-        ...
-        clearTimeout(timeOut);
-        timeOut = setTimeout(() => {
-          setGetUsers(true);
-        }, 500);
-        ...
-            }`}
+function handleChange(e) {
+...
+  clearTimeout(timeOut);
+  timeOut = setTimeout(() => {
+  setGetUsers(true);
+  }, 500);
+...
+}`}
           />
           <p>
             The user is able to invite found users to the course and select a
@@ -401,12 +401,12 @@ const token = req.headers.authorization?.trim().split(' ')[1];`}
             className="h-[13.75em]"
             language="ts"
             code={`export const OutletContainer = styled.div\`
-      overflow-y: scroll;
-      margin-top: 100px;
-      padding: 20px;
-      max-height: calc(100vh - 100px);
-      width: 100%;
-    \`;`}
+  overflow-y: scroll;
+  margin-top: 100px;
+  padding: 20px;
+  max-height: calc(100vh - 100px);
+  width: 100%;
+\`;`}
           />
         </section>
       </div>
