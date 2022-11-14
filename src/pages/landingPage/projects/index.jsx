@@ -1,5 +1,5 @@
 import CLASSABLE from '../../../assets/images/classable.png';
-import CHATAPP from '../../../assets/images/chat-app.png';
+import CHATTER from '../../../assets/images/chatter.png';
 import CATHORT6 from '../../../assets/images/cathort6.png';
 import CLONES from '../../../assets/images/clones.png';
 import Title from '../../../components/Title';
@@ -24,10 +24,21 @@ const Projects = () => {
             'Tailwind',
             'Socket.io',
           ]}
-          theme="bg-[#2BC48A]"
+          theme="bg-[#122e20]"
           image={CLASSABLE}
           path="classable"
         />
+
+        <Project
+          title="Cathort 6"
+          description="Designed and delivered an ecommerce store using Stripe to handle payment processes, Firebase to store data, handle authentication and allow 'Google Sign-in', styled components for smooth transitions and animations. "
+          tools={['React', 'Firebase', 'Stripe', 'Styled-Components']}
+          theme="bg-[#581f1f]"
+          image={CATHORT6}
+          path="cathort-6"
+          reverse={true}
+        />
+
         <Project
           title="Chatter"
           description="Interactive chat application designed for business and leisure purposes. Featuring authentication, private and group messaging delivered with the Socket.io library for live data transmission."
@@ -39,19 +50,11 @@ const Projects = () => {
             'Tailwind',
             'Socket.io',
           ]}
-          theme="bg-[#FDA172]"
-          image={CHATAPP}
+          theme="bg-[#9b2f00]"
+          image={CHATTER}
           path="chatter"
-          reverse={true}
         />
-        <Project
-          title="Cathort 6"
-          description="Designed and delivered an ecommerce store using Stripe to handle payment processes, Firebase to store data, handle authentication and allow 'Google Sign-in', styled components for smooth transitions and animations. "
-          tools={['React', 'Firebase', 'Stripe', 'Styled-Components']}
-          theme="bg-[#d95d5d]"
-          image={CATHORT6}
-          path="cathort-6"
-        />
+
         <Project
           title="Clones"
           description="Clones of websites, for targeted skills development, including Spotify and challenges from Frontend Mentor"

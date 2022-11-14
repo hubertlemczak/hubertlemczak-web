@@ -20,7 +20,7 @@ const Project = ({
       }`}
     >
       <img
-        className={`lg:absolute lg:h-full ${
+        className={`rounded-2xl lg:absolute ${
           reverse ? 'lg:order-2 lg:left-1/2 lg:ml-16' : 'lg:right-1/2 lg:mr-16'
         }`}
         src={image}
@@ -43,7 +43,7 @@ const Project = ({
           {tools.map(tool => (
             <li
               key={uniqid()}
-              className={`rounded-full text-sm font-bold text-black ${theme} px-3 py-1`}
+              className={`rounded-full text-sm font-bold text-white ${theme} px-3 py-1`}
             >
               {tool}
             </li>
