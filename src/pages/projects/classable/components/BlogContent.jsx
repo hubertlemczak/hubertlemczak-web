@@ -27,6 +27,7 @@ const BlogContent = () => {
   return (
     <article className="projects-container">
       <section id="introduction" data-title="Introduction" data-type="heading">
+        <h2 className="hidden">Introduction</h2>
         <p>
           A feature rich full-stack application designed for online education.
           Aims to provide an efficient digital community for students and
@@ -379,7 +380,11 @@ function handleChange(e) {
 
           <div className="flex flex-wrap justify-center gap-4">
             <img src={DESKTOP_SIDEBAR} alt="Desktop sidebar." />
-            <img src={MOBILE_SIDEBAR} alt="Mobile responsive sidebar." />
+            <img
+              src={MOBILE_SIDEBAR}
+              alt="Mobile responsive sidebar."
+              className="h-[396px]"
+            />
             <img
               src={COURSEADMIN_SETTINGS}
               alt="Desktop navbar."
@@ -612,12 +617,14 @@ agoraClient.publish(tracks);
               displaying a black screen with the user&apos;s name instead of
               deleting them from state.
             </span>
+
+            <img
+              src={SHARE_SCREEN_PROMPT}
+              alt="Browser share screen pop-up askin user to choose which screen to share."
+              className="mx-auto"
+            />
           </li>
-          <img
-            src={SHARE_SCREEN_PROMPT}
-            alt="Browser share screen pop-up askin user to choose which screen to share."
-            className="mx-auto"
-          />
+
           <li>
             <span>
               Start and stop screen share. Clicking the button will show a
