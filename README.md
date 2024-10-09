@@ -1,5 +1,6 @@
-This is the first version of my personal website built with React.
+**[hubertlemczak.com](https://www.hubertlemczak.com)**
 
-## View the live site [here](https://v1--hubertlemczak.netlify.app)
+My personal website built with Astro.
 
-## View the latest version [here](https://hubertlemczak.com)
+You can view the previous version of the site on the
+[`v1 branch`](https://github.com/hubertlemczak/hubertlemczak-web/tree/v1).
