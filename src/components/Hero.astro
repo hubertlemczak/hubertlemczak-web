@@ -1,0 +1,153 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+---
+
+<section class="container">
+  <div class="hero-left">
+    <h1>Crafting Code,<br />Building Solutions</h1>
+    <p class="subtitle">
+      — I'm Hubert, your
+      <span class="text-stroke">next Software Developer</span>
+    </p>
+    <div class="info">
+      <div>
+        <Icon name="briefcase" size="20" />
+        <h4>Recent Experience</h4>
+        <p>Full Stack Developer @ trustwise.io ag.</p>
+        <p>Creating the core banking system of the Web3 era.</p>
+      </div>
+      <div>
+        <Icon name="location" size="20" />
+        <h4>Location</h4>
+        <p>London, UK</p>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <video width="400" height="400" autoplay loop muted>
+      <source src="/spotify-mobile.mp4" type="video/mp4" /></video
+    >
+    <Image src="/twitter-laptop.webp" alt="" width="400" height="400" loading="eager" />
+    <video width="400" height="400" autoplay loop muted>
+      <!-- @todo: replace with new content -->
+      <source src="/spotify-mobile.mp4" type="video/mp4" /></video
+    >
+  </div>
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: 100vh;
+    margin-block: 6.25rem 10rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: var(--font-noto);
+    line-height: 1.3;
+    color: white;
+  }
+
+  .subtitle {
+    max-width: 40rem;
+    color: #dadada;
+    font-size: 2rem;
+    font-family: var(--font-noto);
+    line-height: 1.3;
+  }
+
+  .text-stroke {
+    font-style: italic;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--color-accent);
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 4rem;
+  }
+
+  .info h4 {
+    margin-block: 0.75rem 0.25rem;
+  }
+
+  .info p {
+    color: var(--color-gray);
+  }
+
+  .hero-right {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .hero-right video,
+  .hero-right img {
+    width: 100%;
+    height: 100%;
+    max-width: 31.25rem;
+    max-height: 31.25rem;
+    margin-inline: auto;
+  }
+
+  @media (width > 48em) {
+    h1 {
+      font-size: 5.125rem;
+    }
+
+    .subtitle {
+      font-size: 3.5rem;
+    }
+
+    .info {
+      flex-direction: row;
+      gap: 5rem;
+      margin-top: 6rem;
+    }
+
+    .hero-right {
+      grid-template-columns: repeat(2, auto);
+    }
+
+    .hero-right video,
+    .hero-right img {
+      max-width: none;
+      max-height: none;
+    }
+  }
+
+  @media (width > 72.5em) {
+    section {
+      grid-template-columns: 1fr auto;
+      margin-block: 6.25rem 16rem;
+    }
+
+    .hero-left {
+      position: sticky;
+      top: 8.25rem;
+      height: fit-content;
+    }
+
+    .info {
+      margin-top: 15rem;
+    }
+
+    .hero-right {
+      grid-template-columns: auto;
+      grid-template-rows: max-content;
+    }
+
+    .hero-right video,
+    .hero-right img {
+      max-width: 25rem;
+      max-height: 25rem;
+    }
+  }
+</style>
