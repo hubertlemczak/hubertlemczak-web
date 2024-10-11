@@ -1,0 +1,140 @@
+<footer>
+  <div class="container footer-container">
+    <p>👋 Thanks for stopping by! If you like what you see let's <i>work together</i></p>
+    <nav>
+      <div>
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/me">Me</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get in Touch</h5>
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/hubertlemczak" target="_blank" rel="noopener">
+              LinkedIn
+            </a>
+          </li>
+          <li><a href="mailto:hubertlemczak@gmail.com">Email</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>More</h5>
+        <ul>
+          <li>
+            <a href="https://github.com/hubertlemczak" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <li>
+            <a href="https://x.com/hubertlemczak" target="_blank" rel="noopener">Twitter</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="website-marquee"></div>
+</footer>
+
+<style>
+  .website-marquee {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+  }
+
+  .website-marquee::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='40px' width='240px'><text x='0' y='30' style='font-size: 1.75rem; font-style: italic; fill: rgb(124, 124, 131);  font-family: serif;'>hubertlemczak.com</text></svg>");
+    width: 7777px;
+    background-repeat: repeat-x;
+    color: var(--color-gray);
+    white-space: nowrap;
+    padding-bottom: 2rem;
+    animation: marquee linear forwards infinite;
+    animation-duration: 420s;
+  }
+
+  @keyframes marquee {
+    0% {
+      background-position: 0%;
+    }
+    50% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: 0%;
+    }
+  }
+
+  footer {
+    position: relative;
+    padding: 12rem 1rem 6rem;
+    background-color: white;
+    background-image: url("/barcode.webp");
+    background-repeat: no-repeat;
+    background-size: 200% 35%;
+  }
+
+  .footer-container {
+    display: grid;
+    gap: 4rem;
+    /* margin-top: 10rem; */
+  }
+
+  p {
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: var(--font-noto);
+    color: var(--color-gray);
+    margin-right: 2rem;
+  }
+
+  i {
+    color: black;
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  h5 {
+    color: var(--color-gray);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    min-height: 2.25rem;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  @media (width > 48em) {
+    footer {
+      padding: 16rem 2rem 10rem;
+      background-size: 100% 40%;
+    }
+  }
+
+  @media (width > 57em) {
+    p {
+      margin-right: 0;
+    }
+
+    .footer-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

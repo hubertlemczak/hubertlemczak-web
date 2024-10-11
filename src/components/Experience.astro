@@ -1,0 +1,141 @@
+---
+import { Image } from "astro:assets";
+import { isToday } from "../utils/date";
+
+type Props = {
+  id: string;
+  role: string;
+  date: Date | [Date, Date];
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+  href: string;
+  openInNewTab?: boolean;
+};
+
+const { id, role, date, title, description, image, alt, href, openInNewTab } = Astro.props;
+
+let dateString = "";
+
+if (date instanceof Date) {
+  dateString = date.getFullYear().toString();
+} else {
+  const startDate = date[0].getFullYear().toString();
+  if (isToday(date[1])) {
+    dateString = `${startDate} —`;
+  } else {
+    const endDate = date[1].getFullYear().toString();
+    dateString = `${startDate} — ${endDate}`;
+  }
+}
+---
+
+<li>
+  <div>
+    <span>{id}</span>
+    <a href={href} target={openInNewTab ? "_blank" : ""}>
+      <Image src={image} alt={alt} width={120} height={120} />
+    </a>
+  </div>
+  <div>
+    <div class="info">
+      <span>{role.toUpperCase()}</span>
+      <span class="date date-mobile">{dateString}</span>
+    </div>
+    <a href={href} target={openInNewTab ? "_blank" : ""}>
+      <h4>{title}</h4>
+    </a>
+    <p>{description}</p>
+  </div>
+  <span class="date date-desktop">{dateString}</span>
+</li>
+
+<style>
+  li {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: auto 1fr;
+    padding-block: 2rem 3rem;
+  }
+
+  li:not(:last-of-type) {
+    border-bottom: 1px solid var(--color-gray);
+  }
+
+  span {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-gray);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05rem;
+  }
+
+  .date {
+    white-space: nowrap;
+  }
+
+  img {
+    width: 100%;
+    max-width: 3.75rem;
+    height: auto;
+  }
+
+  h4 {
+    font-size: 2rem;
+    font-family: var(--font-noto);
+    font-weight: 400;
+    line-height: 0.8;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    max-width: 56rem;
+    font-size: 1rem;
+    color: var(--color-gray);
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .date-desktop {
+    display: none;
+  }
+
+  @media (width > 48em) {
+    li {
+      gap: 3.5rem;
+      grid-template-columns: auto 1fr auto;
+      padding-block: 5rem 6rem;
+    }
+
+    img {
+      max-width: 7.5rem;
+    }
+
+    .date-mobile {
+      display: none;
+    }
+
+    .date-desktop {
+      display: block;
+    }
+
+    h4 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+  }
+</style>
