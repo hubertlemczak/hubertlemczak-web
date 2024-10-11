@@ -85,13 +85,18 @@ import { Image } from "astro:assets";
 
   .hero-right {
     display: grid;
+    grid-template-columns: repeat(2, auto);
     gap: 2rem;
+  }
+
+  .hero-right > :last-child {
+    grid-column: span 2;
   }
 
   .hero-right video,
   .hero-right img {
     width: 100%;
-    height: 100%;
+    height: auto;
     max-width: 31.25rem;
     max-height: 31.25rem;
     margin-inline: auto;
@@ -113,7 +118,11 @@ import { Image } from "astro:assets";
     }
 
     .hero-right {
-      grid-template-columns: repeat(2, auto);
+      grid-template-columns: repeat(3, auto);
+    }
+
+    .hero-right > :last-child {
+      grid-column: auto;
     }
 
     .hero-right video,
