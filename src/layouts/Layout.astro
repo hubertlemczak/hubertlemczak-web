@@ -1,5 +1,6 @@
 ---
 import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
 
 interface Props {
   title: string;
@@ -28,6 +29,7 @@ const { title, description } = Astro.props;
     />
   </head>
   <body>
+    <Navigation />
     <main>
       <slot />
     </main>
@@ -37,7 +39,7 @@ const { title, description } = Astro.props;
 
 <style is:global>
   :root {
-    --color-accent: #eaff00;
+    --color-accent: #0000ff;
     --color-gray: #7c7c7c;
 
     --font-noto: "Noto Serif Display", sans-serif;
