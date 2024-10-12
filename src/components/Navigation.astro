@@ -1,54 +1,97 @@
 ---
 import { Icon } from "astro-icon/components";
+import Hamburger from "./Hamburger.astro";
 ---
 
-<nav>
-  <a href="/" aria-label="Home">
-    <Icon name="favicon" width={45} height={45} />
-  </a>
-  <ul>
-    <li><a href="/">HOME</a></li>
-    <li><a href="/me">ME</a></li>
-    <li>
-      <a href="https://github.com/hubertlemczak" aria-label="GitHub">
-        <Icon name="github" width={24} height={24} />
-      </a>
-    </li>
-    <li>
-      <a href="https://www.linkedin.com/in/hubertlemczak" aria-label="LinkedIn">
-        <Icon name="linkedin" width={24} height={24} />
-      </a>
-    </li>
-    <li><a href="mailto:hubertlemczak@gmail.com" class="email-btn">EMAIL</a></li>
-  </ul>
-  <div class="mobile-menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</nav>
+<header>
+  <nav>
+    <a href="/" aria-label="Home">
+      <Icon name="favicon" width={45} height={45} />
+    </a>
+    <div class="nav-menu">
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/me">ME</a></li>
+        <li>
+          <a href="https://github.com/hubertlemczak" aria-label="GitHub">
+            <Icon name="github" width={24} height={24} />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/hubertlemczak" aria-label="LinkedIn">
+            <Icon name="linkedin" width={24} height={24} />
+          </a>
+        </li>
+        <li><a href="mailto:hubertlemczak@gmail.com" class="email-btn">EMAIL</a></li>
+      </ul>
+    </div>
+    <Hamburger />
+  </nav>
+</header>
 
 <style>
-  nav {
+  header {
+    backdrop-filter: blur(8px);
+    padding: 1.5rem;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    backdrop-filter: blur(8px);
     z-index: 10;
   }
 
-  ul {
+  nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-menu {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    padding: 1.5rem;
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  body.mobile-nav-toggled .nav-menu {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .nav-menu ul {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 2rem;
+    margin-left: -100%;
+  }
+
+  body.mobile-nav-toggled .nav-menu ul {
+    transition: margin 0.3s ease-in-out;
+  }
+
+  .nav-menu li {
+    width: fit-content;
+  }
+
+  body.mobile-nav-open .nav-menu {
+    left: 0;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  body.mobile-nav-open .nav-menu ul {
+    margin-left: 0;
   }
 
   a {
+    display: inline-block;
     font-size: 0.875rem;
     font-weight: 600;
     color: white;
@@ -62,18 +105,24 @@ import { Icon } from "astro-icon/components";
     color: white;
   }
 
-  .mobile-menu {
-    width: 44px;
-    height: 44px;
-  }
-
   @media (width > 48em) {
-    nav {
+    header {
       padding: 1.5rem 2rem;
     }
 
-    .mobile-menu {
-      display: none;
+    .nav-menu {
+      width: fit-content;
+      padding: 0;
+      position: initial;
+      height: fit-content;
+      background-color: transparent;
+      opacity: 1;
+    }
+
+    .nav-menu ul {
+      flex-direction: row;
+      margin: 0;
+      align-items: center;
     }
   }
 </style>
