@@ -1,0 +1,79 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<nav>
+  <a href="/" aria-label="Home">
+    <Icon name="favicon" width={45} height={45} />
+  </a>
+  <ul>
+    <li><a href="/">HOME</a></li>
+    <li><a href="/me">ME</a></li>
+    <li>
+      <a href="https://github.com/hubertlemczak" aria-label="GitHub">
+        <Icon name="github" width={24} height={24} />
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/hubertlemczak" aria-label="LinkedIn">
+        <Icon name="linkedin" width={24} height={24} />
+      </a>
+    </li>
+    <li><a href="mailto:hubertlemczak@gmail.com" class="email-btn">EMAIL</a></li>
+  </ul>
+  <div class="mobile-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    backdrop-filter: blur(8px);
+    z-index: 10;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  a {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.05rem;
+  }
+
+  .email-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-accent);
+    color: white;
+  }
+
+  .mobile-menu {
+    width: 44px;
+    height: 44px;
+  }
+
+  @media (width > 48em) {
+    nav {
+      padding: 1.5rem 2rem;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+  }
+</style>

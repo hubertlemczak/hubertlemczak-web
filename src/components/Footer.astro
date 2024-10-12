@@ -1,6 +1,9 @@
 <footer>
   <div class="container footer-container">
-    <p>👋 Thanks for stopping by! If you like what you see let's <i>work together</i></p>
+    <div>
+      <p>👋 Thanks for stopping by! If you like what you see let's <i>work together</i></p>
+      <a href="mailto:hubertlemczak@gmail.com" class="email-me">Email me</a>
+    </div>
     <nav>
       <div>
         <h5>Navigation</h5>
@@ -86,7 +89,6 @@
   .footer-container {
     display: grid;
     gap: 4rem;
-    /* margin-top: 10rem; */
   }
 
   p {
@@ -99,6 +101,17 @@
 
   i {
     color: black;
+  }
+
+  .email-me {
+    display: block;
+    padding: 0.5rem 1.5rem;
+    width: fit-content;
+    margin-top: 2rem;
+    font-size: 1.375rem;
+    background-color: var(--color-accent);
+    color: white;
+    text-decoration: none;
   }
 
   nav {
@@ -127,6 +140,11 @@
     footer {
       padding: 16rem 2rem 10rem;
       background-size: 100% 40%;
+    }
+
+    .email-me {
+      padding: 0.75rem 2rem;
+      font-size: 1.75rem;
     }
   }
 
