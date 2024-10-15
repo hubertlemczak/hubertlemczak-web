@@ -1,0 +1,70 @@
+---
+import WebsiteSVG from "./WebsiteSVG.astro";
+import { createArray } from "../utils/createArray";
+---
+
+<article class="wrapper">
+  <div class="marquee">
+    <div class="marquee__group">
+      {createArray(10).map(() => <WebsiteSVG />)}
+    </div>
+
+    <div aria-hidden="true" class="marquee__group">
+      {createArray(10).map(() => <WebsiteSVG />)}
+    </div>
+  </div>
+</article>
+
+<style>
+  :root {
+    --color-bg-accent: var(--color-accent);
+    --size: 120px;
+    --gap: 1rem;
+    --duration: 60s;
+    --scroll-start: calc(-100% - var(--gap));
+    --scroll-end: 0;
+  }
+
+  .marquee {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+  }
+
+  .marquee__group {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%;
+    animation: scroll-x var(--duration) linear infinite;
+  }
+
+  @keyframes scroll-x {
+    from {
+      transform: translateX(var(--scroll-start));
+    }
+    to {
+      transform: translateX(var(--scroll-end));
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    margin: auto;
+    max-width: 100vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee__group {
+      animation-play-state: paused;
+    }
+  }
+</style>
