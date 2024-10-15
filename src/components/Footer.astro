@@ -1,3 +1,7 @@
+---
+import MarqueeWebsite from "./MarqueeWebsite.astro";
+---
+
 <footer>
   <div class="container footer-container">
     <div>
@@ -36,47 +40,10 @@
       </div>
     </nav>
   </div>
-  <div class="website-marquee"></div>
+  <MarqueeWebsite />
 </footer>
 
 <style>
-  .website-marquee {
-    overflow: hidden;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40px;
-  }
-
-  .website-marquee::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='40px' width='240px'><text x='0' y='30' style='font-size: 1.75rem; font-style: italic; fill: rgb(124, 124, 131);  font-family: serif;'>hubertlemczak.com</text></svg>");
-    width: 7777px;
-    background-repeat: repeat-x;
-    color: var(--color-gray);
-    white-space: nowrap;
-    padding-bottom: 2rem;
-    animation: marquee linear forwards infinite;
-    animation-duration: 420s;
-  }
-
-  @keyframes marquee {
-    0% {
-      background-position: 0%;
-    }
-    50% {
-      background-position: 100%;
-    }
-    100% {
-      background-position: 0%;
-    }
-  }
-
   footer {
     position: relative;
     padding: 12rem 1rem 6rem;
