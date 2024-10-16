@@ -27,6 +27,8 @@
 
 <style>
   .mobile-menu-btn {
+    --duration: 0.3s;
+
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -96,27 +98,27 @@
   }
 
   body.mobile-nav-open .mobile-menu-btn span:nth-child(1) {
-    animation: one-open 0.3s ease-in-out forwards;
+    animation: one-open var(--duration) ease-in-out forwards;
   }
 
   body.mobile-nav-open .mobile-menu-btn span:nth-child(2) {
-    animation: two-open 0.3s steps(1) forwards;
+    animation: two-open var(--duration) steps(1) forwards;
   }
 
   body.mobile-nav-open .mobile-menu-btn span:nth-child(3) {
-    animation: three-open 0.3s ease-in-out forwards;
+    animation: three-open var(--duration) ease-in-out forwards;
   }
 
   body.mobile-nav-closing .mobile-menu-btn span:nth-child(1) {
-    animation: one-close 0.3s ease-in-out forwards;
+    animation: one-close var(--duration) ease-in-out forwards;
   }
 
   body.mobile-nav-closing .mobile-menu-btn span:nth-child(2) {
-    animation: two-close 0.3s steps(1) forwards;
+    animation: two-close var(--duration) steps(1) forwards;
   }
 
   body.mobile-nav-closing .mobile-menu-btn span:nth-child(3) {
-    animation: three-close 0.3s ease-in-out forwards;
+    animation: three-close var(--duration) ease-in-out forwards;
   }
 
   @media (width > 48em) {
