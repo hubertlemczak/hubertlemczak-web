@@ -13,26 +13,26 @@ import { Image } from "astro:assets";
     <div class="info">
       <div>
         <Icon name="briefcase" size="20" />
-        <h4>Recent Experience</h4>
+        <div class="info-title">Recent Experience</div>
         <p>Full Stack Developer @ trustwise.io ag.</p>
         <p>Creating the core banking system of the Web3 era.</p>
       </div>
       <div>
         <Icon name="location" size="20" />
-        <h4>Location</h4>
+        <div class="info-title">Location</div>
         <p>London, UK</p>
       </div>
     </div>
   </div>
   <div class="hero-right">
     <video width="400" height="400" autoplay loop muted>
-      <source src="/spotify-mobile.mp4" type="video/mp4" /></video
-    >
+      <source src="/spotify-mobile.mp4" type="video/mp4" />
+    </video>
     <Image src="/twitter-laptop.webp" alt="" width="400" height="400" loading="eager" />
     <video width="400" height="400" autoplay loop muted>
       <!-- @todo: replace with new content -->
-      <source src="/spotify-mobile.mp4" type="video/mp4" /></video
-    >
+      <source src="/spotify-mobile.mp4" type="video/mp4" />
+    </video>
   </div>
 </section>
 
@@ -74,8 +74,9 @@ import { Image } from "astro:assets";
     margin-top: 4rem;
   }
 
-  .info h4 {
+  .info .info-title {
     margin-block: 0.75rem 0.25rem;
+    font-weight: 700;
   }
 
   .info p {

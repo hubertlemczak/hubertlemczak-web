@@ -11,7 +11,6 @@ import Hamburger from "./Hamburger.astro";
     <div class="nav-menu">
       <ul>
         <li><a href="/">HOME</a></li>
-        <li><a href="/me">ME</a></li>
         <li>
           <a href="https://github.com/hubertlemczak" aria-label="GitHub">
             <Icon name="github" width={24} height={24} />
@@ -65,7 +64,7 @@ import Hamburger from "./Hamburger.astro";
     align-items: center;
     gap: 2rem;
     margin-left: -100%;
-    margin-top: -200px;
+    margin-top: clamp(-200px, -30vh, -20px);
   }
 
   body.mobile-nav-toggled .nav-menu ul {
@@ -113,6 +112,7 @@ import Hamburger from "./Hamburger.astro";
       height: fit-content;
       background-color: transparent;
       opacity: 1;
+      pointer-events: all;
     }
 
     .nav-menu ul {
