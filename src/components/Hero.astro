@@ -1,6 +1,6 @@
 ---
-import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 ---
 
 <section class="container">
@@ -25,11 +25,11 @@ import { Image } from "astro:assets";
     </div>
   </div>
   <div class="hero-right">
-    <video width="400" height="400" autoplay loop muted>
+    <video width="400" height="400" autoplay loop muted playsinline>
       <source src="/spotify-mobile.mp4" type="video/mp4" />
     </video>
     <Image src="/twitter-laptop.webp" alt="" width="400" height="400" loading="eager" />
-    <video width="400" height="400" autoplay loop muted>
+    <video width="400" height="400" autoplay loop muted playsinline>
       <!-- @todo: replace with new content -->
       <source src="/spotify-mobile.mp4" type="video/mp4" />
     </video>
