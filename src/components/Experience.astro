@@ -1,11 +1,10 @@
 ---
 import { Image } from "astro:assets";
-import { isToday } from "../utils/date";
 
 type Props = {
   id: string;
   role: string;
-  date: Date | [Date, Date];
+  date: string;
   title: string;
   description: string;
   image: string;
@@ -15,23 +14,9 @@ type Props = {
 };
 
 const { id, role, date, title, description, image, alt, href, openInNewTab } = Astro.props;
-
-let dateString = "";
-
-if (date instanceof Date) {
-  dateString = date.getFullYear().toString();
-} else {
-  const startDate = date[0].getFullYear().toString();
-  if (isToday(date[1])) {
-    dateString = `${startDate} —`;
-  } else {
-    const endDate = date[1].getFullYear().toString();
-    dateString = `${startDate} — ${endDate}`;
-  }
-}
 ---
 
-<li>
+<li class="fade-in-delay" style=`--delay: ${0.15 * Number(id)}s;`>
   <div>
     <span>{id}</span>
     <a href={href} target={openInNewTab ? "_blank" : ""}>
@@ -41,14 +26,14 @@ if (date instanceof Date) {
   <div>
     <div class="info">
       <span>{role.toUpperCase()}</span>
-      <span class="date date-mobile">{dateString}</span>
+      <span class="date date-mobile">{date}</span>
     </div>
     <a href={href} target={openInNewTab ? "_blank" : ""}>
       <h2>{title}</h2>
     </a>
     <p>{description}</p>
   </div>
-  <span class="date date-desktop">{dateString}</span>
+  <span class="date date-desktop">{date}</span>
 </li>
 
 <style>
