@@ -102,34 +102,16 @@ const { title, description } = Astro.props;
   }
 
   .fade-in {
-    animation: fade-in 0.7s ease-in-out forwards;
-    visibility: visible;
-  }
-
-  @keyframes fade-in {
-    0% {
-      opacity: 0.1;
-      -webkit-transform: translateY(-20px);
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-  }
-
-  .fade-in-delay {
-    --delay: 0.3s;
+    --delay: 0s;
 
     opacity: 0;
     visibility: visible;
     -webkit-transform: translateY(-20px);
     transform: translateY(-20px);
-    animation: fade-in-delay 0.7s ease-in-out var(--delay) forwards;
+    animation: fade-in 0.7s ease-in-out var(--delay) forwards;
   }
 
-  @keyframes fade-in-delay {
+  @keyframes fade-in {
     0% {
       opacity: 0;
       -webkit-transform: translateY(-20px);
