@@ -1,12 +1,13 @@
 ---
-import { Icon } from "astro-icon/components";
-import Hamburger from "./Hamburger.astro";
+import { Icon } from 'astro-icon/components';
+import Hamburger from './Hamburger.astro';
+import { Image } from 'astro:assets';
 ---
 
 <header>
   <nav>
     <a href="/" aria-label="Home">
-      <Icon name="favicon" width={45} height={45} />
+      <Image src="/logo.svg" alt="" width={48} height={48} loading="eager" />
     </a>
     <div class="nav-menu">
       <ul>
