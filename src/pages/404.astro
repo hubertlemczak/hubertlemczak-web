@@ -1,17 +1,25 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Page Not Found | Hubert Lemczak" description="">
+<Layout title="Page Not Found | Hubert Lemczak" description="Page not found.">
   <section class="container">
-    <div>
+    <div class="fade-in-delay" style="--delay: 0.3s;">
       <h1>Oh no...</h1>
       <p class="subtitle">It looks like this page has been lost 👾</p>
       <a href="/" class="return-home">Return home</a>
     </div>
-    <Image src="/404.svg" alt="" width="800" height="800" loading="eager" />
+    <Image
+      class="fade-in-delay"
+      style="--delay: 0.7s;"
+      src="/404.svg"
+      alt=""
+      width="800"
+      height="800"
+      loading="eager"
+    />
   </section>
 </Layout>
 
