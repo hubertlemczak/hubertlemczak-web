@@ -10,7 +10,24 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<!doctype html>
+<script>
+  const elements = document.getElementsByClassName("fade-in-observable");
+
+  const observer = new IntersectionObserver((entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+    console.log(entries, observer);
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("fade-in-observable");
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+
+  Array.from(elements).forEach((element) => {
+    if (element) observer.observe(element);
+  });
+</script>
+
 <html lang="en">
   <head>
     <title>{title}</title>
@@ -119,8 +136,14 @@ const { title, description } = Astro.props;
 </style>
 
 <style is:global>
+  .fade-in-observable,
+  .fade-in-observable * {
+    animation-play-state: paused !important;
+  }
+
   .fade-in {
     animation: fade-in 0.7s ease-in-out forwards;
+    visibility: visible;
   }
 
   @keyframes fade-in {
@@ -140,6 +163,7 @@ const { title, description } = Astro.props;
     --delay: 0.3s;
 
     opacity: 0;
+    visibility: visible;
     -webkit-transform: translateY(-20px);
     transform: translateY(-20px);
     animation: fade-in-delay 0.7s ease-in-out var(--delay) forwards;
