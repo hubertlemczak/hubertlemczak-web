@@ -1,0 +1,40 @@
+---
+import Experience from './Experience.astro';
+---
+
+<section class="container">
+  <ul>
+    <Experience
+      id="01"
+      role="Full Stack Developer"
+      date={[new Date('01-02-2023'), new Date()]}
+      description="Creating the core banking system of the Web3 era. Building native and web applications using various technologies, including TypeScript, React, Python, Kotlin, Swift."
+      title="trustwise.io ag"
+      image="/twex-logo.webp"
+      alt="The word 'TWEX' capitalized in bold white letters on a purple background, surrounded by decorative lines resembling fiber optic cables."
+      href="https://www.trustwise.io/"
+      openInNewTab
+    />
+    <Experience
+      id="02"
+      role="Personal Project"
+      date={new Date('01-11-2022')}
+      description="Architected a full-stack application managing complex data states and live video streaming via WebRTC. Begin your learning today with Classable."
+      title="Classable"
+      image="/classable-logo.webp"
+      alt="Black and white line art illustration of a graduation cap, with simple lines outlining the cap's square top and hanging tassel."
+      href="https://v1.hubertlemczak.com/projects/classable"
+    />
+    <Experience
+      id="03"
+      role="Software Developer Trainee"
+      date={new Date('01-04-2022')}
+      description="Building responsive web interfaces, server-side applications, and collaborating in an agile environment."
+      title="Boolean"
+      image="/boolean-logo.webp"
+      alt="Boolean Logo"
+      href="https://boolean.co.uk/"
+      openInNewTab
+    />
+  </ul>
+</section>
