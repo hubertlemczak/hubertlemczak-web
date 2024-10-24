@@ -64,12 +64,12 @@ import { Image } from "astro:assets";
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    margin-left: -100%;
+    transform: translateX(-100%);
     margin-top: clamp(-200px, -30vh, -20px);
   }
 
   body.mobile-nav-toggled .nav-menu ul {
-    transition: margin 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
   }
 
   .nav-menu li {
@@ -77,13 +77,12 @@ import { Image } from "astro:assets";
   }
 
   body.mobile-nav-open .nav-menu {
-    left: 0;
     opacity: 1;
     pointer-events: all;
   }
 
   body.mobile-nav-open .nav-menu ul {
-    margin-left: 0;
+    transform: translateX(0);
   }
 
   a {
@@ -120,6 +119,7 @@ import { Image } from "astro:assets";
       flex-direction: row;
       margin: 0;
       align-items: center;
+      transform: translateX(0);
     }
   }
 </style>
